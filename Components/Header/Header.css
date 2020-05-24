@@ -1,5 +1,5 @@
  /* src/components/Header/Header.css */
-i.Nav {
+.Nav {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
   position: fixed;
@@ -10,6 +10,7 @@ i.Nav {
   transition: height 0.2s ease-in-out;
   height: 77px;
 }
+
 .Nav-menus {
   display: flex;
   flex-direction: row;
@@ -46,11 +47,13 @@ i.Nav {
 
 
 .Nav-profile-menu{
+ padding-top: 7px;
  display: flex;
  flex-direction: row;
- height: 77px;
- width: 70%;
+ height: 50px;
+ width: 5%;
  margin: 0 auto;
+ float: right;
 }
 
 .Nav-profile{
@@ -62,7 +65,9 @@ i.Nav {
   background-repeat: no-repeat;
   height: 50px;
   width: 35px;
+  margin-left:auto; margin-right:0;
   text-indent: -1000%
-     
-
 }
+
+
+body { padding-top: 80px; }
