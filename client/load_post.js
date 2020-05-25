@@ -1,4 +1,4 @@
-// não pode ser uma constante, fofos
+// o html de cada post, irá ser carregado dinamicamente
 var post_template =
     '<article class="post">' +
     '<div class="post-user">' +
@@ -19,8 +19,7 @@ var post_template =
     '</div>' +
     '</article>'
 
-function load_posts(posts) { 
-
+function load_feed(posts) { 
     var feed = $("#psts");
     for(i = 0; i < posts.length; i++){
         var post = posts[i];
@@ -30,16 +29,12 @@ function load_posts(posts) {
         post.post_content_path,
         post.author_username,
         post.post_description
-    ));  
+    ));
   }
 }
 
-
-
-// main, xisdê
 window.onload = function () {
-    // é utilizado um pequeno grande hack, é carregado um json
-    // disfarçado de js pelo html, depois é transformado em json
-    // risos loucos
-    this.load_posts(JSON.parse(posts_info).posts);
+    // faz request ao "servidor" (feed_controller) para obter os posts
+    // carrega os posts no feed
+    this.load_feed(this.get_feed());
 }
