@@ -1,6 +1,6 @@
  /* src/components/Header/Header.css */
 .Nav {
-  background-color: #fff;
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
   position: fixed;
   top: 0;
@@ -9,6 +9,7 @@
   -webkit-transition: height 0.2s ease-in-out;
   transition: height 0.2s ease-in-out;
   height: 77px;
+ min-width: 500px;
 }
 
 .Nav-menus {
@@ -70,4 +71,5 @@
 }
 
 
-body { padding-top: 80px; }
+body { padding-top: 80px; 
+background-color: #fafafa;}

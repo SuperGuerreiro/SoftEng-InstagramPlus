@@ -10,16 +10,23 @@ The 'supports' rule will only run if your browser supports CSS grid.
 
 :root {
     font-size: 12px;
+
 }
 
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
+    
     min-height: 100vh;
-    background-color: #fafafa;
     color: #262626;
     padding-bottom: 3rem;
-    min-width: 50%;
+    
+}
+
+#override-bootstrap {
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+    min-width: px;
 }
 
 img {
@@ -64,6 +71,7 @@ img {
     content: "";
     display: block;
     clear: both;
+    
 }
 
 .profile-image {
@@ -119,7 +127,7 @@ img {
     margin-top: 1.5rem;
     font-size: 1.3rem;
     line-height: 1.5;
-    margin-right: 4rem;
+    margin-right: 3rem;
     cursor: pointer;
 }
 
