@@ -13,10 +13,13 @@
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- jquery, can be changed to local lib later -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="db/posts/posts.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/load_post.js"></script>
 </head>
-
-
-
     
 <body>
     
@@ -37,26 +40,9 @@
     
     <!-- END OF HEADER -->
     
-            <article class="Post" ref="Post">
-                  <div class="Post-user">
-                    <div class="Post-user-avatar">
-                      <img src="https://cdn.discordapp.com/attachments/691711349373403138/714134998860693534/sss.jpg" alt="Rafael(a)" />
-                    </div>
-                    <div class="Post-user-nickname">
-                      <span>Rafael(a)</span>
-                    </div>
-                  </div>
-                
-                <div class="Post-image">
-                  <div class="Post-image-bg">
-                    <img alt="Icon Living" src="https://cdn.discordapp.com/attachments/691711349373403138/714134998860693534/sss.jpg" />
-                  </div>
-                </div>
-                <div class="Post-caption">
-                  <strong>Rafael(a)</strong> Porque ter namorada quando podes ser a namorada?
-                </div>
-            </article>
-    
+    <div class=posts id=psts>
+      <!-- empty div, posts will be loaded here -->
+    </div>
 
  
 
