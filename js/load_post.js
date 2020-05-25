@@ -11,7 +11,9 @@ var post_template =
     '</div>' +
     '<div class="post-content">' +
     '<div class="post-content-bg">' +
+    '<figure class="filter-inkwell">'+
     '<img src="{2}"/>' + // pst_content_path
+    '</figure>'+
     '</div>' +
     '</div>' +
     '<div class="post-caption">' +
