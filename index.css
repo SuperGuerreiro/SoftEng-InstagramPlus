@@ -1,0 +1,12 @@
+.fixedbutton {
+    position: fixed;
+    bottom: 50px;
+    right: 40px; 
+
+    background-image: url(./btn.png);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+
