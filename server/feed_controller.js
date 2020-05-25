@@ -1,3 +1,5 @@
+// retorna a informação sobre o feed
 function get_feed() {
-    return JSON.parse(posts_info).posts;
+    // faz pedido à base de dados de posts
+    return get_all_posts();
 };

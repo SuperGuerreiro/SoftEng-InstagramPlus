@@ -19,7 +19,7 @@ var post_template =
     '</div>' +
     '</article>'
 
-function load_feed(posts) { 
+function load_feed(posts) {
     var feed = $("#psts");
     for(i = 0; i < posts.length; i++){
         var post = posts[i];
