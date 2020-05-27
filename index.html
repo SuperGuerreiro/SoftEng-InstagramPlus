@@ -18,6 +18,7 @@
     <script type="text/javascript" src="server/feed_controller.js"></script>
     <script type="text/javascript" src="client/utils.js"></script>
     <script type="text/javascript" src="client/load_post.js"></script>
+    <script type="text/javascript" src="client/upload.js"></script>
     
     <!-- css -->
     <link rel="stylesheet" href="lib/instagram.css/dist/instagram.min.css" />
@@ -50,20 +51,11 @@
     <div class=posts id=psts>
       <!-- empty div, posts will be loaded here -->
     </div>
+       
+            <label for='uploadFile'></label>
+            <input id='file-arquivo' type='file'>
+            <input type="file" id="uploadFile" onchange="uploadFile()">
 
-    
-    <a href="./Components/create_post/create_post.html">  
-        <btn class="fixedbutton">
-            </btn>
-
-    </a>
-    
-    
-    
- 
-
-
-    
 </body>   
     
 

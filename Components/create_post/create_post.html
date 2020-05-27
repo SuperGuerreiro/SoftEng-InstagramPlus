@@ -46,6 +46,9 @@
 </header>
 
 <main>
+    
+
+    
 
 	<div class="container">
 
@@ -53,66 +56,84 @@
 
 			<div class="photo-item" tabindex="0">
                 <figure class="filter-[filter-name]" id="filter-figure-id">
-                    <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
+                    <div id="load-content">
+                        <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">     
+                        <video  autoplay loop muted>
+                              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/ogg">
+                              Your browser does not support HTML video.
+                        </video>
+                    </div>
                 </figure>
 				<div class="gallery-item-info">
-                    
-				</div>
-
+				</div>   
 			</div>
+            
 
-			
 
 		</div>
 		<!-- End of photo item -->
         
     <div class="create-post-user-interface">
-        Filter   
-        <select id="filter"> 
-            <option value="no-filter" >none</option>
-            <option value="1977" >1977</option>
-            <option value="aden">aden</option>
-            <option value="amaro">amaro</option>
-            <option value="ashby">ashby</option>
-            <option value="brannan">brannan</option>
-            <option value="brooklyn">brooklyn</option>
-            <option value="charmes">charmes</option>
-            <option value="crema">crema</option>
-            <option value="dogpatch">dogpatch</option>
-            <option value="earlybird">earlybird</option>
-            <option value="gingham">gingham</option>
-            <option value="ginza">ginza</option>
-            <option value="hefe">hefe</option>
-            <option value="helena">helena</option>
-            <option value="hudson">hudson</option>
-            <option value="inkwell">inkwell</option>
-            <option value="kelvin">kelvin</option>
-            <option value="juno">juno</option>
-            <option value="lark">lark</option>
-            <option value="lofi">lofi</option>
-            <option value="ludwig">ludwig</option>
-            <option value="maven">maven</option>
-            <option value="mayfair">mayfair</option>
-            <option value="moon">moon</option>
-            <option value="nashville">nashville</option>
-            <option value="perpetua">perpetua</option>
-            <option value="poprocket">poprocket</option>
-            <option value="reyes">reyes</option>
-            <option value="rise">rise</option>
-            <option value="sierra">sierra</option>
-            <option value="skyline">skyline</option>
-            <option value="slumber">slumber</option>
-            <option value="stinson">stinson</option>
-            <option value="sutro">sutro</option>
-            <option value="toaster">toaster</option>
-            <option value="valencia">valencia</option>
-            <option value="vesper">vesper</option>
-            <option value="walden">walden</option>
-            <option value="willow">willow</option>
-            <option value="xpro-ii">xpro-ii</option>
-        </select>
-
+        
+        <div class="filter-interface">
+            Filter   
+            <select id="filter"> 
+                <option value="no-filter" >none</option>
+                <option value="1977" >1977</option>
+                <option value="aden">aden</option>
+                <option value="amaro">amaro</option>
+                <option value="ashby">ashby</option>
+                <option value="brannan">brannan</option>
+                <option value="brooklyn">brooklyn</option>
+                <option value="charmes">charmes</option>
+                <option value="crema">crema</option>
+                <option value="dogpatch">dogpatch</option>
+                <option value="earlybird">earlybird</option>
+                <option value="gingham">gingham</option>
+                <option value="ginza">ginza</option>
+                <option value="hefe">hefe</option>
+                <option value="helena">helena</option>
+                <option value="hudson">hudson</option>
+                <option value="inkwell">inkwell</option>
+                <option value="kelvin">kelvin</option>
+                <option value="juno">juno</option>
+                <option value="lark">lark</option>
+                <option value="lofi">lofi</option>
+                <option value="ludwig">ludwig</option>
+                <option value="maven">maven</option>
+                <option value="mayfair">mayfair</option>
+                <option value="moon">moon</option>
+                <option value="nashville">nashville</option>
+                <option value="perpetua">perpetua</option>
+                <option value="poprocket">poprocket</option>
+                <option value="reyes">reyes</option>
+                <option value="rise">rise</option>
+                <option value="sierra">sierra</option>
+                <option value="skyline">skyline</option>
+                <option value="slumber">slumber</option>
+                <option value="stinson">stinson</option>
+                <option value="sutro">sutro</option>
+                <option value="toaster">toaster</option>
+                <option value="valencia">valencia</option>
+                <option value="vesper">vesper</option>
+                <option value="walden">walden</option>
+                <option value="willow">willow</option>
+                <option value="xpro-ii">xpro-ii</option>
+            </select>
+        </div>
+        
+        <div class="description-interface">
+            <label>Add Description</label>
+            <input type = "text"
+                id = "description"
+                value = "" />
+        </div>
+        
+        
+        
 	</div>
+        
 	<!-- End of container -->
 
 <script>
