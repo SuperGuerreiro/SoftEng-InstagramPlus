@@ -80,10 +80,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .profile-image img {
     border-radius: 50%;
+    width: 152px;
+    height: 152px;
 }
 
 .profile-user-settings,
