@@ -5,28 +5,31 @@ const VIDEO_SIZE_LIMIT = 8000000; //8mb
 /*exported uploadFile */
 
 function uploadFile() { 
-    var file = document.getElementById("uploadFile");
-    
-    var fileName = file.files[0].name;
-    
-    var filesize = file.files[0].size;
-    
-    if(fileName.endsWith(".jpg") || fileName.endsWith(".png")){
+    var file = document.getElementById("uploadFile").files[0];
+
+
+    if(file.name.endsWith(".jpg") || file.name.endsWith(".png")){
         
-        if(file.files[0].size >= IMAGE_SIZE_LIMIT){
+        if(file.size >= IMAGE_SIZE_LIMIT){
             window.alert("Image Size Exceeded. Over 2mb");
             return; 
         }
-            
-        localStorage.setItem("tmp_file", file);
+          
+        var fileURL = URL.createObjectURL(file);
+
+        localStorage.setItem("tmp_file_url", fileURL);
+        localStorage.setItem("tmp_file_format", "photo");
+        
+        document.getElementById("demo").innerHTML = "<img src="+fileURL + " width=\"400px\" height=\"150px\">";
+        
         console.log("Aqui");
         //Redirect para create_post
         window.location.replace("./Components/create_post/create_post.html"); 
     }
     
-    else if(fileName.endsWith(".mp4")){
+    else if(file.name.endsWith(".mp4")){
         
-        if(file.files[0].size >= VIDEO_SIZE_LIMIT){
+        if(file.size >= VIDEO_SIZE_LIMIT){
             window.alert("Video Size Exceeded. Over 8mb");
             return; 
         }
@@ -42,3 +45,5 @@ function uploadFile() {
     }
         
 }
+
+
