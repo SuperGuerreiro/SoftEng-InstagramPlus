@@ -1,5 +1,3 @@
-const IS_LOADED_ID = "is_loaded";
-
 // posts estáticos
 posts_info_static ='{"posts":[{\
 "post_id":"static0",\
@@ -47,26 +45,29 @@ posts_info_static ='{"posts":[{\
 "author_avatar_path":"database/posts/content/static3.jpeg"\
 }]}';
 
-function load_posts_to_storage() {
-    console.log('Initializing posts db...');
-    var posts = JSON.parse(posts_info_static).posts;
-    for(var i = 0; i < posts.length; i++)
-        localStorage.setItem(posts[i].post_id, JSON.stringify(posts[i]));
-    
-    localStorage.setItem(IS_LOADED_ID, "1");
-}
-
-function is_loaded(){
-    return (localStorage.getItem(IS_LOADED_ID) != null);
+function create_post_key(post_id){
+    return POST_KEY_PREFIX + post_id;
 }
 
 function is_post_key(key){
-    return key != IS_LOADED_ID;
+    return !is_reserved(key) && key.startsWith(POST_KEY_PREFIX);
 }
 
+function load_static_posts() {
+    console.log('Initializing posts db...');
+    var posts = JSON.parse(posts_info_static).posts;
+    for(var i = 0; i < posts.length; i++)
+        localStorage.setItem(
+            create_post_key(posts[i].post_id),
+            JSON.stringify(posts[i]));
+
+    localStorage.setItem(POSTS_LOADED, "1");
+}
+
+// mesmo não sendo utilizado, pode ser interessante para debugging
 function get_all_posts() {
-    if(!this.is_loaded()) // lazy approach
-        this.load_posts_to_storage();
+    if(!is_loaded(POSTS_LOADED)) // lazy approach
+        this.load_static_posts();
 
     var posts = [], keys = Object.keys(localStorage);
     for(var i = 0; i < keys.length; i++)
@@ -75,3 +76,18 @@ function get_all_posts() {
     
     return posts;
 }
+
+function get_posts(posts_id) {
+    if(!is_loaded(POSTS_LOADED)) // lazy approach
+        this.load_static_users();
+
+    posts = [];
+    for(var i = 0; i < posts_id.length; i++){
+       var post = JSON.parse(localStorage.getItem(create_post_key(posts_id[i])));
+       if(post != null)
+        posts.push(post);
+    }
+
+    return posts;
+}
+
