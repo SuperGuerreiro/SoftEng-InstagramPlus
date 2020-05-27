@@ -79,7 +79,8 @@ function get_all_posts() {
 
 function get_posts(posts_id) {
     if (!is_loaded(POSTS_LOADED)) // lazy approach
-        this.load_static_users();
+        this.load_static_posts();
+
     posts = [];
     for (var i = 0; i < posts_id.length; i++) {
         var post = localStorage.getItem(create_post_key(posts_id[i]));
