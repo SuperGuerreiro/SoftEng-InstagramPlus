@@ -2,70 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Instagram Plus</title>
-   
-    <!-- Bootstrap core CSS -->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Instagram Plus</title>
 
-    <!-- jquery, can be changed to local lib later -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- custom js -->
-    <script type="text/javascript" src="database/posts/posts.js"></script>
-    <script type="text/javascript" src="server/feed_controller.js"></script>
-    <script type="text/javascript" src="client/utils.js"></script>
-    <script type="text/javascript" src="client/load_post.js"></script>
-    
-    <!-- css -->
-    <link rel="stylesheet" href="lib/instagram.css/dist/instagram.min.css" />
-    <link rel="stylesheet" type="text/css" href="./Components/Header/Header.css" />
-    <link rel="stylesheet" type="text/css" href="./Components/Post/Post.css" />
-    <link rel="stylesheet" href="./index.css" />
-
-    
+  <!-- Nootstrap core CSS -->
+  <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jquery, can be changed to local lib later -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- custom js, DON'T TOUCH THIS -->
+  <script type="text/javascript" src="database/database.js"></script>
+  <script type="text/javascript" src="database/posts/posts.js"></script>
+  <script type="text/javascript" src="server/feed_controller.js"></script>
+  <script type="text/javascript" src="client/utils.js"></script>
+  <script type="text/javascript" src="client/load_post.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="lib/instagram.css/dist/instagram.min.css" />
+  <link rel="stylesheet" type="text/css" href="./Components/Header/Header.css" />
+  <link rel="stylesheet" type="text/css" href="./Components/Post/Post.css" />
+  <link rel="stylesheet" href="./index.css" />
 </head>
-    
+
 <body>
-    
-    <!-- HEADER -->
-    <nav class="Nav">
-        <div class="Nav-menus">
-       <div class="Nav-brand">
-         <a class="Nav-brand-logo" href="./index.html">
-           Instagram
-         </a>
-        
-
-
-        </div>
-        <a class="Nav-profile" href="./Components/Profile/profile.html"></a>
-     </div>
-    </nav>
-    
-    <!-- END OF HEADER -->
-    
-    <div class=posts id=psts>
-      <!-- empty div, posts will be loaded here -->
+  <!-- header -->
+  <nav class="Nav">
+    <div class="Nav-menus">
+      <div class="Nav-brand">
+        <a class="Nav-brand-logo" href="./index.html">
+          Instagram
+        </a>
+      </div>
+      <a class="Nav-profile" href="./Components/Profile/profile.html"></a>
     </div>
-
-    
-    <a href="./Components/create_post/create_post.html">  
-        <btn class="fixedbutton">
-            </btn>
-
-    </a>
-    
-    
-    
- 
-
-
-    
-</body>   
-    
-
+  </nav>
+  <!-- add post button -->
+  <a href="./Components/create_post/create_post.html">
+    <btn class="fixedbutton"></btn>
+  </a>
+  <!-- feed -->
+  <div class=posts id=psts>
+    <!-- posts will be loaded here -->
+  </div>
+</body>
 </html>
-
