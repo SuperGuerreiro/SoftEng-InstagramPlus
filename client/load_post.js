@@ -11,9 +11,9 @@ var post_template =
     '</div>' +
     '<div class="post-content">' +
     '<div class="post-content-bg">' +
-    '<figure class="filter-inkwell">'+
+    '<figure class="filter-inkwell">' +
     '<img src="{2}"/>' + // pst_content_path
-    '</figure>'+
+    '</figure>' +
     '</div>' +
     '</div>' +
     '<div class="post-caption">' +
@@ -23,16 +23,16 @@ var post_template =
 
 function load_feed(posts) {
     var feed = $("#psts");
-    for(i = 0; i < posts.length; i++){
+    for (i = 0; i < posts.length; i++) {
         var post = posts[i];
         feed.append(post_template.format(
-        post.author_avatar_path, 
-        post.author_username,
-        post.post_content_path,
-        post.author_username,
-        post.post_description
-    ));
-  }
+            post.author_avatar_path,
+            post.author_username,
+            post.post_content_path,
+            post.author_username,
+            post.post_description
+        ));
+    }
 }
 
 window.onload = function () {

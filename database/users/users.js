@@ -14,6 +14,8 @@ users_info_static = '{"users":[\
 "barack_obama_official"\
 ],\
 "user_posts":[\
+"static0",\
+"static1"\
 ]\
 },\
 {\
@@ -89,13 +91,13 @@ function get_users(users_id) {
 
 	users = [];
 	for (var i = 0; i < users_id.length; i++) {
-		var user = JSON.parse(localStorage.getItem(create_user_key(users_id[i])));
+		var user = localStorage.getItem(create_user_key(users_id[i]));
 		if (user != null)
-			users.push(user);
+			users.push(JSON.parse(user));
 	}
+
 	return users;
 }
-
 
 /**
  * login
