@@ -65,7 +65,7 @@ img {
 
 .photo-item {
     position: relative;
-    flex: 1 0 22rem;
+ 
     margin: 1rem;
     color: #fff;
     align-items: center;
@@ -103,10 +103,15 @@ img {
 
 /* User Interface */
 .create-post-user-interface{
-    width: 50px;
+
     padding-top: 20px;
     padding-left: 50px;
 
+}
+
+.description-interface{
+    margin-left:auto; margin-right:0;
+    
 }
 
 
