@@ -6,7 +6,9 @@ const VIDEO_SIZE_LIMIT = 8000000; //8mb
 
 function uploadFile() { 
     var file = document.getElementById("uploadFile").files[0];
-
+    var filePath = document.getElementById("uploadFile").value;
+    
+    console.log(file.name);
 
     if(file.name.endsWith(".jpg") || file.name.endsWith(".png")){
         
@@ -14,15 +16,10 @@ function uploadFile() {
             window.alert("Image Size Exceeded. Over 2mb");
             return; 
         }
-          
-        var fileURL = URL.createObjectURL(file);
-
-        localStorage.setItem("tmp_file_url", fileURL);
+        
+        localStorage.setItem("tmp_file_location", "test/content/" + file.name);
         localStorage.setItem("tmp_file_format", "photo");
-        
-        document.getElementById("demo").innerHTML = "<img src="+fileURL + " width=\"400px\" height=\"150px\">";
-        
-        console.log("Aqui");
+
         //Redirect para create_post
         window.location.replace("./Components/create_post/create_post.html"); 
     }
@@ -31,8 +28,11 @@ function uploadFile() {
         
         if(file.size >= VIDEO_SIZE_LIMIT){
             window.alert("Video Size Exceeded. Over 8mb");
-            return; 
+            return;  
         }
+        
+        localStorage.setItem("tmp_file_location", "test/content/" + file.name);
+        localStorage.setItem("tmp_file_format", "video");
         
         console.log("é video");
         //Tratar video
@@ -45,5 +45,3 @@ function uploadFile() {
     }
         
 }
-
-

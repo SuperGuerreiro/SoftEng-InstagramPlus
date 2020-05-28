@@ -50,6 +50,16 @@ img {
 
 /* photo Section */
 
+img {
+  width: 100%;
+  height: auto;
+}
+
+video{
+  width: 100%;
+  height: auto;
+}
+
 .photo-preview {
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +80,6 @@ img {
     color: #fff;
     align-items: center;
     margin: auto;
-    
 }
 
 .gallery-item-info {
