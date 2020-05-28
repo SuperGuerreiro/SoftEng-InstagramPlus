@@ -1,14 +1,17 @@
 // retorna a informação sobre o feed
 function get_feed() {
-    var current_user = get_current_user();
-    if (current_user == null) {
-        console.log("not logged in")
-        return;
-    }
+	var loggedin_user = get_loggedin_user();
+	if (loggedin_user == null) {
+		console.log("not logged in")
+		return;
+	}
 
-    var following_users = get_users(current_user.user_following), feed_posts = [];
-    for (var i = 0; i < following_users.user_following; i++)
-        feed_posts.concat(get_posts(following_users[i].user_posts));
-        
-    return feed_posts;
+	var feed_posts = [];
+	feed_posts.push(...get_posts(loggedin_user.user_posts)); // próprios posts
+
+	var following_users = get_users(loggedin_user.user_following); // posts de quem segue
+	for (var i = 0; i < following_users.length; i++)
+		feed_posts.push(...get_posts(following_users[i].user_posts));
+
+	return feed_posts;
 };

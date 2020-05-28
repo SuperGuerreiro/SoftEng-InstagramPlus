@@ -107,19 +107,21 @@ function get_users(users_id) {
  * 
  */
 
+LOGGEDIN_USER = "superguerreiro666"
+
 // define um utilizador como logado
-function set_current_user(user_id) {
+function set_loggedin_user(user_id) {
 	if (get_users([user_id]).length <= 0)
 		return;
 	localStorage.setItem(CURRENT_USER_LABEL, user_id);
 }
 
 // devolve o utilizador logado
-function get_current_user() {
-	return get_users([get_current_user_id()])[0];
+function get_loggedin_user() {
+	return get_users([get_loggedin_user_id()])[0];
 }
 
 // devolve o id do utilizador logado
-function get_current_user_id() {
+function get_loggedin_user_id() {
 	return localStorage.getItem(CURRENT_USER_LABEL);
 }
