@@ -8,19 +8,19 @@ posts_info_static = '{"posts":[{\
 "usa"\
 ],\
 "post_content_path":"database/posts/content/static0.jpeg",\
-"author_username":"obama",\
-"author_avatar_path":"database/posts/content/static0.jpeg"\
+"author_username":"superguerreiro666",\
+"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },\
 {\
 "post_id":"static1",\
 "post_creation_ts":"-1",\
-"post_description":"Hello Friends,...",\
+"post_description":"Hello Friends, again...",\
 "post_hashtags":[\
 "whitehouse"\
 ],\
 "post_content_path":"database/posts/content/static1.jpeg",\
-"author_username":"obama.president",\
-"author_avatar_path":"database/posts/content/static1.jpeg"\
+"author_username":"superguerreiro666",\
+"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },\
 {\
 "post_id":"static2",\
@@ -87,7 +87,6 @@ function get_posts(posts_id) {
         if (post != null)
             posts.push(JSON.parse(post));
     }
-
     return posts;
 }
 
