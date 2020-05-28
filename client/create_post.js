@@ -26,3 +26,17 @@ window.onload = function() {
     }
         
 }
+
+function createPost(){
+    
+    //Adquiri Filtro
+    var postFilter = document.getElementById("filter-figure-id").className;
+    //Adquiri Descrição
+    var postDesc = document.getElementById("description").value;   
+    //Adquiri Localização
+    var postLoc = document.getElementById("location").value;
+    
+     //Redirect para onde quiseres (preferencialmente o caralinho que te foda. cumps)
+    window.location.replace("HTML PARA ONDE QUERES REDIRECIONAR AQUI"); 
+
+}
