@@ -1,49 +1,79 @@
 // posts estáticos
-posts_info_static = '{"posts":[{\
-"post_id":"static0",\
-"post_creation_ts":"-1",\
-"post_description":"Hello Friends,...",\
-"post_hashtags":[\
-"whitehouse",\
-"usa"\
-],\
-"post_content_path":"database/posts/content/static0.jpeg",\
+posts_info_static = '{"posts":['
++ //superguerreiro666
+'{\
+"post_id":"puppy0",\
+"post_creation_ts":"1590748820100",\
+"post_description":"Que fofura... #cute #puppy",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["cute","puppy"],\
+"post_content_path":"database/posts/content/puppy0.jpeg",\
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
-},\
-{\
-"post_id":"static1",\
+},'
++ //rsantos
+'{\
+"post_id":"cat0",\
+"post_creation_ts":"1590749174500",\
+"post_description":"Um #cute #cat que me deixa feliz! 🐱",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["cute","cat"],\
+"post_content_path":"database/posts/content/cat0.jpeg",\
+"author_username":"rsantos",\
+"author_avatar_path":"database/users/content/rsantos.jpg"\
+},'
++ //rsantos
+'{\
+"post_id":"puppy1",\
 "post_creation_ts":"-1",\
-"post_description":"Hello Friends, again...",\
-"post_hashtags":[\
-"whitehouse"\
-],\
-"post_content_path":"database/posts/content/static1.jpeg",\
+"post_description":"Olhem para isto, que #funny #puppy 🤣🤣🤣",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["funny","puppy"],\
+"post_content_path":"database/posts/content/puppy1.jpeg",\
+"author_username":"rsantos",\
+"author_avatar_path":"database/users/content/rsantos.jpg"\
+},'
++ //superguerreiro666
+'{\
+"post_id":"puppy2",\
+"post_creation_ts":"1590748820100",\
+"post_description":"#funny #puppy",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["funny","puppy"],\
+"post_content_path":"database/posts/content/puppy2.jpeg",\
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
-},\
-{\
-"post_id":"static2",\
+},'
++ //superguerreiro666
+'{\
+"post_id":"hamster0",\
+"post_creation_ts":"1590748820100",\
+"post_description":"Estou a pensar comprar um ratinho malta! #funny #hamster",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["funny","hamster"],\
+"post_content_path":"database/posts/content/hamster0.jpeg",\
+"author_username":"superguerreiro666",\
+"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
+},'
++ //rsantos
+'{\
+"post_id":"pig0",\
 "post_creation_ts":"-1",\
-"post_description":"Hello Friends,...",\
-"post_hashtags":[\
-"hello",\
-"fridayswithobama"\
-],\
-"post_content_path":"database/posts/content/static2.jpeg",\
-"author_username":"obama",\
-"author_avatar_path":"database/posts/content/static0.jpeg"\
-},\
-{\
-"post_id":"static3",\
-"post_creation_ts":"-1",\
-"post_description":"Hello Friends,...",\
-"post_hashtags":[\
-],\
-"post_content_path":"database/posts/content/static3.jpeg",\
-"author_username":"obama_whitehouse",\
-"author_avatar_path":"database/posts/content/static3.jpeg"\
-}]}';
+"post_description":"🐷🐽 #cute #funny #pig",\
+"post_filter":"//TODO",\
+"post_location":"//TODO",\
+"post_hashtags":["cute","funny","pig"],\
+"post_content_path":"database/posts/content/pig0.jpeg",\
+"author_username":"rsantos",\
+"author_avatar_path":"database/users/content/rsantos.jpg"\
+}'
++
+']}';
 
 function create_post_key(post_id) {
 	return POST_KEY_PREFIX + post_id;

@@ -1,57 +1,40 @@
 // users estáticos
-users_info_static = '{"users":[\
-{\
-"user_id":"superguerreiro666",\
-"user_name":"Renato João",\
-"user_bio":"Eu vivo no futuro porque me perdi no passado... 😭",\
-"user_avatar_path":"database/users/content/superguerreiro666.jpg",\
-"user_profile_visibility":"1",\
-"user_followers":[\
-"barack_obama_official"\
-],\
-"user_following":[\
-"rms3q",\
-"barack_obama_official"\
-],\
-"user_posts":[\
-"static0",\
-"static1"\
-]\
-},\
-{\
-"user_id":"rms3q",\
-"user_name":"Rafael José",\
-"user_bio":"it\'s lit",\
-"user_avatar_path":"database/users/content/rms3q.jpg",\
-"user_profile_visibility":"1",\
-"user_followers":[\
-"superguerreiro666",\
-"barack_obama_official"\
-],\
-"user_following":[\
-"barack_obama_official"\
-],\
-"user_posts":[\
-]\
-},\
-{\
-"user_id":"barack_obama_official",\
-"user_name":"Barack Obama",\
-"user_bio":"Hello dear friends...",\
-"user_avatar_path":"database/users/content/barack_obama_official.jpg",\
-"user_profile_visibility":"1",\
-"user_followers":[\
-"rms3q",\
-"superguerreiro666"\
-],\
-"user_following":[\
-"rms3q",\
-"barack_obama_official"\
-],\
-"user_posts":[\
-]\
-}\
-]}';
+users_info_static = '{"users":['
+	+
+	'{\
+	"user_id":"superguerreiro666",\
+	"user_name":"Renato",\
+	"user_bio":"Eu vivo no futuro porque me perdi no passado... 😭",\
+	"user_avatar_path":"database/users/content/superguerreiro666.jpg",\
+	"user_profile_visibility":"1",\
+	"user_followers":["rsantos"],\
+	"user_following":["rsantos"],\
+	"user_posts":["puppy0","puppy2","hamster0"]\
+	},'
+	+
+	'{\
+	"user_id":"rmseq",\
+	"user_name":"Rafael",\
+	"user_bio":"Odeio computadores! 🤜💻",\
+	"user_avatar_path":"database/users/content/rmseq.jpg",\
+	"user_profile_visibility":"0",\
+	"user_followers":[""],\
+	"user_following":["superguerreiro666"],\
+	"user_posts":[""]\
+	},'
+	+
+	'{\
+	"user_id":"rsantos",\
+	"user_name":"Ruizinho",\
+	"user_bio":"😂😂😂",\
+	"user_avatar_path":"database/users/content/rsantos.jpg",\
+	"user_profile_visibility":"0",\
+	"user_followers":["superguerreiro666"],\
+	"user_following":["superguerreiro666"],\
+	"user_posts":["cat0","puppy1","pig0"]\
+	}'
+	+
+	']}';
 
 function create_user_key(user_id) {
 	return USER_KEY_PREFIX + user_id;
@@ -100,12 +83,12 @@ function get_users(users_id) {
 }
 
 function add_user(user) {
-    if (!is_loaded(USERS_LOADED)) // lazy approach
-        this.load_static_users();
+	if (!is_loaded(USERS_LOADED)) // lazy approach
+		this.load_static_users();
 
-    localStorage.setItem(
-        create_user_key(user.user_id),
-        JSON.stringify(user));
+	localStorage.setItem(
+		create_user_key(user.user_id),
+		JSON.stringify(user));
 }
 
 /**
