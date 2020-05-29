@@ -2,6 +2,8 @@
 // guardado aqui para garantir concistência, são coisas utilizadas pelo sistema
 const POSTS_LOADED = "posts_loaded";
 const USERS_LOADED = "users_loaded";
+const TMP_FILE_LOCATION = "tmp_file_location";
+const TMP_FILE_FORMAT = "tmp_file_format";
 const CURRENT_USER_LABEL = "current_user";
 const POST_KEY_PREFIX = "pst_";
 const USER_KEY_PREFIX = "usr_";

@@ -45,6 +45,7 @@ posts_info_static = '{"posts":[{\
 "author_avatar_path":"database/posts/content/static3.jpeg"\
 }]}';
 
+
 function create_post_key(post_id) {
     return POST_KEY_PREFIX + post_id;
 }
@@ -90,3 +91,11 @@ function get_posts(posts_id) {
     return posts;
 }
 
+function add_post(post) {
+    if (!is_loaded(POSTS_LOADED)) // lazy approach
+        this.load_static_posts();
+
+    localStorage.setItem(
+        create_post_key(post.post_id),
+        JSON.stringify(post));
+}

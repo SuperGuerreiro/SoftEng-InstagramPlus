@@ -99,6 +99,15 @@ function get_users(users_id) {
 	return users;
 }
 
+function add_user(user) {
+    if (!is_loaded(USERS_LOADED)) // lazy approach
+        this.load_static_users();
+
+    localStorage.setItem(
+        create_user_key(user.user_id),
+        JSON.stringify(user));
+}
+
 /**
  * login
  * 
@@ -125,3 +134,5 @@ function get_loggedin_user() {
 function get_loggedin_user_id() {
 	return localStorage.getItem(CURRENT_USER_LABEL);
 }
+
+
