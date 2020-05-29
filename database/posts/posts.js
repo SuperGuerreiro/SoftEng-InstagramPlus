@@ -45,57 +45,56 @@ posts_info_static = '{"posts":[{\
 "author_avatar_path":"database/posts/content/static3.jpeg"\
 }]}';
 
-
 function create_post_key(post_id) {
-    return POST_KEY_PREFIX + post_id;
+	return POST_KEY_PREFIX + post_id;
 }
 
 function is_post_key(key) {
-    return key.startsWith(POST_KEY_PREFIX);
+	return key.startsWith(POST_KEY_PREFIX);
 }
 
 function load_static_posts() {
-    console.log('Initializing posts db...');
-    var posts = JSON.parse(posts_info_static).posts;
-    for (var i = 0; i < posts.length; i++)
-        localStorage.setItem(
-            create_post_key(posts[i].post_id),
-            JSON.stringify(posts[i]));
+	console.log('Initializing posts db...');
+	var posts = JSON.parse(posts_info_static).posts;
+	for (var i = 0; i < posts.length; i++)
+		localStorage.setItem(
+			create_post_key(posts[i].post_id),
+			JSON.stringify(posts[i]));
 
-    localStorage.setItem(POSTS_LOADED, "1");
+	localStorage.setItem(POSTS_LOADED, "1");
 }
 
 // mesmo não sendo utilizado, pode ser interessante para debugging
 function get_all_posts() {
-    if (!is_loaded(POSTS_LOADED)) // lazy approach
-        this.load_static_posts();
+	if (!is_loaded(POSTS_LOADED)) // lazy approach
+		this.load_static_posts();
 
-    var posts = [], keys = Object.keys(localStorage);
-    for (var i = 0; i < keys.length; i++)
-        if (is_post_key(keys[i]))
-            posts.push(JSON.parse(localStorage.getItem(keys[i])));
+	var posts = [], keys = Object.keys(localStorage);
+	for (var i = 0; i < keys.length; i++)
+		if (is_post_key(keys[i]))
+			posts.push(JSON.parse(localStorage.getItem(keys[i])));
 
-    return posts;
+	return posts;
 }
 
 function get_posts(posts_id) {
-    if (!is_loaded(POSTS_LOADED)) // lazy approach
-        this.load_static_posts();
+	if (!is_loaded(POSTS_LOADED)) // lazy approach
+		this.load_static_posts();
 
-    posts = [];
-    for (var i = 0; i < posts_id.length; i++) {
-        var post = localStorage.getItem(create_post_key(posts_id[i]));
-        if (post != null)
-            posts.push(JSON.parse(post));
-    }
-    return posts;
+	posts = [];
+	for (var i = 0; i < posts_id.length; i++) {
+		var post = localStorage.getItem(create_post_key(posts_id[i]));
+		if (post != null)
+			posts.push(JSON.parse(post));
+	}
+	return posts;
 }
 
 function add_post(post) {
-    if (!is_loaded(POSTS_LOADED)) // lazy approach
-        this.load_static_posts();
+	if (!is_loaded(POSTS_LOADED)) // lazy approach
+		this.load_static_posts();
 
-    localStorage.setItem(
-        create_post_key(post.post_id),
-        JSON.stringify(post));
+	localStorage.setItem(
+		create_post_key(post.post_id),
+		JSON.stringify(post));
 }

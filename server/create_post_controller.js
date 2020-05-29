@@ -1,8 +1,9 @@
 
 const HASHTAG_REGEX = /#(\w+)/g; //big brain?
+const REDIRECT_TO = "../../index.html";
 
 // !IMPORTANTE: hashtags devem seguir o formato 
-// json de array quando for adicionado
+// json de array quando for adicionado, usar arr_to_json_arr do utils
 var post_info_template = '{\
     "post_id":"{0}",\
     "post_creation_ts":"{1}",\
@@ -16,36 +17,37 @@ var post_info_template = '{\
     }';
 
 function create_post(description, filter, location, content_path) {
-    var user = get_loggedin_user();
-    var post_id = create_post_id();
-    var post_info = post_info_template.format(
-        post_id,
-        new Date().getTime(),
-        description,
-        filter,
-        location,
-        arr_to_json_arr(parse_hashtags(description)),
-        content_path,
-        user.user_id,
-        user.user_avatar_path,
-    );
+	var user = get_loggedin_user();
+	
+	var post_id = create_post_id();
+	var post_info = post_info_template.format(
+		post_id,
+		new Date().getTime(),
+		description,
+		filter,
+		location,
+		arr_to_json_arr(parse_hashtags(description)),
+		content_path,
+		user.user_id,
+		user.user_avatar_path,
+	);
 
-    add_post(JSON.parse(post_info));
-    user.user_posts.push(post_id);
-    add_user(user);
+	add_post(JSON.parse(post_info));
+	user.user_posts.push(post_id);
+	add_user(user);
 
-    window.location.replace("../../index.html"); 
+	window.location.replace(REDIRECT_TO);
 }
 
 function create_post_id() {
-    return (new Date().getTime()); // shhh, por agora serve
+	return (new Date().getTime()); // shhh, por agora serve
 }
 
 function parse_hashtags(description) {
-    var matches = [];
-    var match;
-    // procura hashtags, como? RTFM
-    while ((match = HASHTAG_REGEX.exec(description)))
-        matches.push(match[1]);
-    return matches;
+	var matches = [];
+	var match;
+	// procura hashtags, como? RTFM
+	while ((match = HASHTAG_REGEX.exec(description)))
+		matches.push(match[1]);
+	return matches;
 }
