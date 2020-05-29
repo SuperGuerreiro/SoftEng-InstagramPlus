@@ -36,7 +36,7 @@ function createPost(){
     //Adquiri Localização
     var postLoc = document.getElementById("location").value;
     
-     //Redirect para onde quiseres (preferencialmente o caralinho que te foda. cumps)
+    //Redirect para onde quiseres (preferencialmente o caralinho que te foda. cumps)
     window.location.replace("HTML PARA ONDE QUERES REDIRECIONAR AQUI"); 
 
 }
