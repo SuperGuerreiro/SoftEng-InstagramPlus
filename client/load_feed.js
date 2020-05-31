@@ -11,13 +11,13 @@ var post_template =
 	'</div>' +
 	'<div class="post-content">' +
 	'<div class="post-content-bg">' +
-	'<figure class="filter-inkwell">' +
-	'<img src="{2}"/>' + // pst_content_path
+	'<figure class="{2}">' + // pst_filter
+	'<img src="{3}"/>' + // pst_content_path
 	'</figure>' +
 	'</div>' +
 	'</div>' +
 	'<div class="post-caption">' +
-	'<strong>{3}</strong> {4}' + //usr_username, pst_description
+	'<strong>{4}</strong> {5}' + //usr_username, pst_description
 	'</div>' +
 	'</article>'
 
@@ -28,6 +28,7 @@ function load_feed(posts) {
 		feed.append(post_template.format(
 			post.author_avatar_path,
 			post.author_username,
+			post.post_filter,
 			post.post_content_path,
 			post.author_username,
 			post.post_description
