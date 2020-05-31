@@ -13,7 +13,7 @@ function get_profile(user_id){
          current_user_id == user_id ) // próprio user
              posts = get_posts(user.user_posts);
 
-    return [user, posts];
+    return [user, posts.sort((x,y) => y.post_creation_ts - x.post_creation_ts)];
 }
 
 

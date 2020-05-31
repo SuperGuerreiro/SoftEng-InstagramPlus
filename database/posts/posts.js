@@ -1,9 +1,9 @@
-// posts estáticos
+// posts estáticos, não esquecer epoch in millis
 posts_info_static = '{"posts":['
-+ //superguerreiro666
++ //superguerreiro666, 5
 '{\
 "post_id":"puppy0",\
-"post_creation_ts":"1590748820100",\
+"post_creation_ts":"1590507192000",\
 "post_description":"Que fofura... #cute #puppy",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\
@@ -12,10 +12,10 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //rsantos
++ //rsantos, 3
 '{\
 "post_id":"cat0",\
-"post_creation_ts":"1590749174500",\
+"post_creation_ts":"1590339315000",\
 "post_description":"Um #cute #cat que me deixa feliz! 🐱",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\
@@ -24,10 +24,10 @@ posts_info_static = '{"posts":['
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
 },'
-+ //rsantos
++ //rsantos, 6
 '{\
 "post_id":"puppy1",\
-"post_creation_ts":"-1",\
+"post_creation_ts":"1590560435000",\
 "post_description":"Olhem para isto, que #funny #puppy 🤣🤣🤣",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\
@@ -36,10 +36,10 @@ posts_info_static = '{"posts":['
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
 },'
-+ //superguerreiro666
++ //superguerreiro666, 4
 '{\
 "post_id":"puppy2",\
-"post_creation_ts":"1590748820100",\
+"post_creation_ts":"1590397223000",\
 "post_description":"#funny #puppy",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\
@@ -48,10 +48,10 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //superguerreiro666
++ //superguerreiro666, 2
 '{\
 "post_id":"hamster0",\
-"post_creation_ts":"1590748820100",\
+"post_creation_ts":"1590287415000",\
 "post_description":"Estou a pensar comprar um ratinho malta! #funny #hamster",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\
@@ -60,10 +60,10 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //rsantos
++ //rsantos, 1
 '{\
 "post_id":"pig0",\
-"post_creation_ts":"-1",\
+"post_creation_ts":"1590272655000",\
 "post_description":"🐷🐽 #cute #funny #pig",\
 "post_filter":"//TODO",\
 "post_location":"//TODO",\

@@ -13,5 +13,6 @@ function get_feed() {
 	for (var i = 0; i < following_users.length; i++)
 		feed_posts.push(...get_posts(following_users[i].user_posts));
 
-	return feed_posts;
+	return feed_posts.sort((x,y) => y.post_creation_ts - x.post_creation_ts); //kel krazy sort
 };
+
