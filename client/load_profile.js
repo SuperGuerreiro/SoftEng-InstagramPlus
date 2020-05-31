@@ -22,7 +22,9 @@ var profile_template =
 
 var gallery_item_template =
 	'<div class="gallery-item" tabindex="0">' +
-	'<img src="{0}" class="gallery-image" >' + //pst_content_path
+	'<figure class="{0}" id="filter-figure-id">' + //pst_filter
+	'<img src="{1}" class="gallery-image" >' + //pst_content_path
+	'</figure>' +
 	'<div class="gallery-item-info">' +
 	'</div>' +
 	'</div>';
@@ -49,6 +51,7 @@ function load_profile_posts(posts) {
 	for (i = 0; i < posts.length; i++) {
 		var post = posts[i];
 		gallery.append(gallery_item_template.format(
+			post.post_filter,
 			REDO_PATH + post.post_content_path
 		));
 	}
