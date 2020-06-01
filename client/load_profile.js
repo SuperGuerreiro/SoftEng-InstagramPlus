@@ -21,12 +21,14 @@ var profile_template =
 	'</div>';
 
 var gallery_item_template =
-	'<div class="gallery-item" tabindex="0">' +
-	'<figure class="{0}" id="filter-figure-id">' + //pst_filter
-	'<img src="{1}" class="gallery-image" >' + //pst_content_path
+	'<div class="gallery-item" id="{0}" tabindex="0">' + //pst_id
+	'<figure class="{1}" id="filter-figure-id">' + //pst_filter
+	'<img src="{2}" class="gallery-image" >' + //pst_content_path
 	'</figure>' +
 	'<div class="gallery-item-info">' +
-    '<button class="btn-delete" onclick="delete_post()"><div class="img"></div></button>'+
+	'<button class="btn-delete" id="{0}" onclick="delete_post(this)">' + //pst_id
+	'<div class="img"></div>' +
+	'</button>' +
 	'</div>' +
 	'</div>';
 
@@ -52,15 +54,20 @@ function load_profile_posts(posts) {
 	for (i = 0; i < posts.length; i++) {
 		var post = posts[i];
 		gallery.append(gallery_item_template.format(
+			post.post_id,
 			post.post_filter,
 			REDO_PATH + post.post_content_path
 		));
 	}
 }
 
-function delete_post(){
-    var deleted = confirm("Are you sure you want to delete this post?");
-    alert( deleted ); // true if OK is pressed
+function delete_post(caller) {
+	if (!confirm("Are you sure you want to delete this post?"))
+		return; 
+
+	remove_post(caller.id);
+	$('#' + caller.id).remove(); // actualiza o perfil (remove post de display)
+	alert("Post deleted.");
 }
 
 window.onload = function () {
