@@ -29,7 +29,7 @@ var gallery_item_template =
 	'<div class="gallery-item-info">' +
 	'</div>' +
 	'</div>';
-var loggedin_user, profile_user; // inicializados on load
+var posts_loaded = false;
 
 function load_profile(profile) {
 	load_profile_info(profile[0]);
@@ -49,13 +49,24 @@ function load_profile_info(user) {
 }
 
 function load_profile_posts(posts) {
-	var gallery = $("#gllry");
-	for (i = 0; i < posts.length; i++) {
-		var post = posts[i];
-		gallery.append(gallery_item_template.format(
-			post.post_filter,
-			REDO_PATH + post.post_content_path
-		));
+	if (!posts_loaded) {
+		var gallery = $("#gllry");
+		for (i = 0; i < posts.length; i++) {
+			var post = posts[i];
+			gallery.append(gallery_item_template.format(
+				post.post_filter,
+				REDO_PATH + post.post_content_path
+			));
+		}
+
+		posts_loaded = true;
+	}
+}
+
+function dont_load_profile_posts(){
+	if (posts_loaded) {
+		$('.gallery-item').remove();
+		posts_loaded = false;
 	}
 }
 
@@ -70,16 +81,29 @@ function load_follow(is_following) {
 }
 
 function follow() {
-	load_follow(!follow_unfollow(loggedin_user, profile_user));
+	var loggedin_user = get_loggedin_user();
+	var profile_user = get_users([localStorage.getItem(TMP_PROFILE)])[0];
+
+	var is_following = follow_unfollow(loggedin_user, profile_user)
+	load_follow(is_following);
+
+	// update aos posts
+	if (profile_user.user_profile_visibility == 0 || is_following)
+		load_profile_posts(get_posts(profile_user.user_posts))
+	else
+		dont_load_profile_posts();
+			
+		
 }
 
 window.onload = function () {
-	loggedin_user = this.get_loggedin_user();
-	profile_user = get_users([localStorage.getItem(TMP_PROFILE)])[0];
-	this.load_profile([
-		profile_user,
-		this.get_posts(profile_user.user_posts)
-	]);
+	var loggedin_user = this.get_loggedin_user();
+	var profile_user = this.get_users([localStorage.getItem(TMP_PROFILE)])[0];
 
-	load_follow(this.is_following(loggedin_user, profile_user));
+	this.load_profile_info(profile_user);
+	var is_following = this.is_following(loggedin_user, profile_user)
+	this.load_follow(is_following);
+
+	if (profile_user.user_profile_visibility == 0 || is_following)
+		this.load_profile_posts(this.get_posts(profile_user.user_posts))
 }
