@@ -27,5 +27,5 @@ function follow_unfollow(user1, user2) {
 	add_user(user1);
 	add_user(user2);
 
-	return !is_fllwng;
+	return is_fllwng;
 }
