@@ -1,5 +1,3 @@
-
-
 function get_profile(user_id){
     var current_user_id = get_loggedin_user_id();
     if(current_user_id == null){
