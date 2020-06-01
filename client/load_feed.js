@@ -30,9 +30,9 @@ function load_feed(posts) {
 	var feed = $("#psts");
 	for (i = 0; i < posts.length; i++) {
 		var post = posts[i];
-		
+
 		var profile_href = STRANGE_PROFILE_URL;
-		if(post.author_username == get_loggedin_user_id())
+		if (post.author_username == get_loggedin_user_id())
 			profile_href = PROFILE_URL;
 
 		feed.append(post_template.format(
@@ -53,4 +53,11 @@ window.onload = function () {
 	// faz request ao "servidor" (feed_controller) para obter os posts
 	// carrega os posts no feed
 	this.load_feed(this.get_feed());
+
+	//"event listener" em todos os links
+	$('a').click(
+		function () {
+			localStorage.setItem(TMP_PROFILE, $(this).text());
+		}
+	);
 }

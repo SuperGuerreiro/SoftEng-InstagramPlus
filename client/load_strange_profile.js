@@ -59,21 +59,34 @@ function load_profile_posts(posts) {
 	}
 }
 
-function follow(){
-    if(!isFollowing){
-        document.getElementById("follow-btn").style.background='#b5b5b5';
-        document.getElementById("follow-btn").innerHTML="Following";
-        
-    } else{
-        document.getElementById("follow-btn").style.background='#0095f6';
-        document.getElementById("follow-btn").innerHTML="Follow";
-    }
-    
-    isFollowing = !isFollowing;
-    
+function follow() {
+	if (!isFollowing) {
+		document.getElementById("follow-btn").style.background = '#b5b5b5';
+		document.getElementById("follow-btn").innerHTML = "Following";
+	} else {
+		document.getElementById("follow-btn").style.background = '#0095f6';
+		document.getElementById("follow-btn").innerHTML = "Follow";
+	}
+
+	isFollowing = !isFollowing; // big brain toggle
+
 }
 
 window.onload = function () {
-	this.set_loggedin_user(LOGGEDIN_USER) // isto pode ser feito de maneira mais inteligente
-	this.load_profile(this.get_profile(this.get_loggedin_user_id()));
+	var user = this.get_loggedin_user();
+	var profile_user = get_users([localStorage.getItem(TMP_PROFILE)])[0];
+
+	this.load_profile([
+		profile_user,
+		this.get_posts(profile_user.user_posts)
+	]);
+
+	if(this.isFollowing = (user.user_followers.indexOf(profile_user.user_id) >= 0)){
+		document.getElementById("follow-btn").style.background = '#b5b5b5';
+		document.getElementById("follow-btn").innerHTML = "Following";
+	} else {
+		document.getElementById("follow-btn").style.background = '#0095f6';
+		document.getElementById("follow-btn").innerHTML = "Follow";
+	}
+
 }
