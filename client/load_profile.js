@@ -26,6 +26,7 @@ var gallery_item_template =
 	'<img src="{1}" class="gallery-image" >' + //pst_content_path
 	'</figure>' +
 	'<div class="gallery-item-info">' +
+    '<button class="btn-delete" onclick="delete_post()"><div class="img"></div></button>'+
 	'</div>' +
 	'</div>';
 
@@ -55,6 +56,11 @@ function load_profile_posts(posts) {
 			REDO_PATH + post.post_content_path
 		));
 	}
+}
+
+function delete_post(){
+    var deleted = confirm("Are you sure you want to delete this post?");
+    alert( deleted ); // true if OK is pressed
 }
 
 window.onload = function () {

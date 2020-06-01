@@ -50,7 +50,7 @@ img {
 }
 
 .btn:focus {
-    outline: 0.5rem auto #4d90fe;
+    outline: none;
 }
 
 .visually-hidden {
@@ -165,23 +165,45 @@ img {
     flex: 1 0 22rem;
     margin: 1rem;
     color: #fff;
-    cursor: pointer;
 }
 
 .gallery-item:hover .gallery-item-info,
 .gallery-item:focus .gallery-item-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    background: rgba(0, 0, 0, .3);
 }
 
+.btn-delete {
+    display: block;
+    background-color: Transparent;
+    opacity: 0;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    background-image: url(../../deleteImg.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    text-indent: -1000%;
+    border: none;
+    cursor:pointer;
+}
+
+.gallery-item:hover .btn-delete {
+    opacity: 1;
+    outline: none;
+}
+
+
 .gallery-item-info {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
 }
 
 .gallery-item-info li {
