@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="../Header/Header.css" />
+<link rel="stylesheet" type="text/css" href="./strange_profile.css" />
+<link rel="stylesheet" href="../../lib/instagram.css/dist/instagram.min.css" /> <!-- filtros -->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Instagram Plus</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jquery, can be changed to local lib later -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- custom js -->
+	<script type="text/javascript" src="../../database/database.js"></script>
+	<script type="text/javascript" src="../../database/users/users.js"></script>
+	<script type="text/javascript" src="../../database/posts/posts.js"></script>
+	<script type="text/javascript" src="../../server/profile_controller.js"></script>
+	<script type="text/javascript" src="../../client/load_strange_profile.js"></script>
+	<script type="text/javascript" src="../../client/utils.js"></script>
+
+</head>
+
+<!-- HEADER -->
+<nav class="Nav">
+	<div class="Nav-menus">
+		<div class="Nav-brand">
+			<a class="Nav-brand-logo" href="../../index.html">
+				Instagram
+			</a>
+		</div>
+		<a class="Nav-search-bar" href="../search/search.html"></a>
+		<a class="Nav-profile" href="../Profile/profile.html"></a>
+	</div>
+</nav>
+
+<!-- id to override bootstrap with css changes, assim permite ter o melhor dos dois mundos -->
+
+<body id="override-bootstrap">
+	<header>
+		<div class="container">
+			<div class="profile" id="prfl">
+				<!-- empty as the universe, content will be loaded with magic-->
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="gallery" id="gllry">
+				<!-- to be loaded -->
+			</div>
+		</div>
+	</main>
+
+</html>
