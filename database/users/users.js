@@ -11,7 +11,7 @@ users_info_static = '{"users":['
 	"user_following":["rsantos"],\
 	"user_following_hashtags":["cute"],\
 	"user_posts":["puppy0","puppy2","hamster0"],\
-	"user_fls":["cute0"]\
+	"user_fls":["cute0","closefriends0"]\
 	},'
 	+
 	'{\

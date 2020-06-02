@@ -1,12 +1,21 @@
 fls_info_static = '{"filter_lists":['
-    + //superguerreiro666, 5
+    + //superguerreiro666
     '{\
 "fl_id":"cute0",\
-"fl_description":"1590507192000",\
-"fl_name":"Que fofura... #cute #puppy",\
-"fl_owner_id":"//TODO",\
+"fl_description":"I love it! lmao 😂",\
+"fl_name":"Funny Cute",\
+"fl_owner_id":"superguerreiro666",\
 "fl_hashtags":["funny","cute"],\
 "fl_users_id":[]\
+},'
+    + //superguerreiro666
+    '{\
+"fl_id":"closefriends0",\
+"fl_description":"My best buddies only, very exclusive.",\
+"fl_name":"Buddies",\
+"fl_owner_id":"superguerreiro666",\
+"fl_hashtags":[],\
+"fl_users_id":["rsantos"]\
 }'
     +
     ']}';
