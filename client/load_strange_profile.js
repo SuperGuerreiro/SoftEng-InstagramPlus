@@ -14,7 +14,7 @@ var profile_template =
 	'<div class="profile-stats">' +
 	'<ul>' +
 	'<li><span class="profile-stat-count">{2}</span> posts</li>' + //usr_posts
-	'<li><span class="profile-stat-count">{3}</span> followers</li>' + //usr_followers
+	'<li><span class="profile-stat-count" id="fllwrs">{3}</span> followers</li>' + //usr_followers
 	'<li><span class="profile-stat-count">{4}</span> following</li>' + //usr_following
 	'</ul>' +
 	'</div>' +
@@ -29,7 +29,7 @@ var gallery_item_template =
 	'<div class="gallery-item-info">' +
 	'</div>' +
 	'</div>';
-var user, posts;
+var user, posts, posts_loaded = false;
 
 function load_profile(profile) {
 	load_profile_info(profile[0]);
@@ -49,6 +49,9 @@ function load_profile_info(user) {
 }
 
 function load_profile_posts(posts) {
+	if(posts_loaded)
+		return;
+
 	var gallery = $("#gllry");
 	for (i = 0; i < posts.length; i++) {
 		var post = posts[i];
@@ -57,10 +60,21 @@ function load_profile_posts(posts) {
 			REDO_PATH + post.post_content_path
 		));
 	}
+
+	posts_loaded = true;
 }
 
-function dont_load_profile_posts() {
+function unload_profile_posts() {
+	if(!posts_loaded)
+		return;
+
 	$('.gallery-item').remove();
+
+	posts_loaded = false;
+}
+
+function update_followers(new_val){
+	$("#fllwrs").text(new_val)
 }
 
 function load_follow(is_following) {
@@ -75,13 +89,18 @@ function load_follow(is_following) {
 
 function follow() {
 	load_follow(follow_unfollow(user));
-	posts = get_profile_posts(user);
+	var profile = get_profile(user.user_id);
+	user = profile[0];
+	posts = profile[1];
+	
 	// update aos posts
-
 	if (posts != null)
 		load_profile_posts(posts)
 	else
-		dont_load_profile_posts();
+		unload_profile_posts();
+
+	// update ao nr de followers, de forma simples
+	update_followers(user.user_followers.length);
 }
 
 window.onload = function () {
