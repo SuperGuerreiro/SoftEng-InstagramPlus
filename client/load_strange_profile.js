@@ -29,7 +29,7 @@ var gallery_item_template =
 	'<div class="gallery-item-info">' +
 	'</div>' +
 	'</div>';
-var user, posts, posts_loaded = false;
+var user, posts, following, posts_loaded = false;
 
 function load_profile(profile) {
 	load_profile_info(profile[0]);
@@ -49,7 +49,7 @@ function load_profile_info(user) {
 }
 
 function load_profile_posts(posts) {
-	if(posts_loaded)
+	if (posts_loaded)
 		return;
 
 	var gallery = $("#gllry");
@@ -65,7 +65,7 @@ function load_profile_posts(posts) {
 }
 
 function unload_profile_posts() {
-	if(!posts_loaded)
+	if (!posts_loaded)
 		return;
 
 	$('.gallery-item').remove();
@@ -73,7 +73,7 @@ function unload_profile_posts() {
 	posts_loaded = false;
 }
 
-function update_followers(new_val){
+function update_followers(new_val) {
 	$("#fllwrs").text(new_val)
 }
 
@@ -88,11 +88,21 @@ function load_follow(is_following) {
 }
 
 function follow() {
-	load_follow(follow_unfollow(user));
+	// confirmação 
+	var str1 = "follow" // lucky guess?
+	var str2 = "Followed."
+	if (following) {
+		str1 = "unfollow"
+		str2 = "Unfollowed."
+	}
+	if (!confirm("Are you sure you want to " + str1 + " " + user.user_id + " ?"))
+		return;
+
+	load_follow((following = follow_unfollow(user)));
 	var profile = get_profile(user.user_id);
 	user = profile[0];
 	posts = profile[1];
-	
+
 	// update aos posts
 	if (posts != null)
 		load_profile_posts(posts)
@@ -101,6 +111,7 @@ function follow() {
 
 	// update ao nr de followers, de forma simples
 	update_followers(user.user_followers.length);
+	alert(str2);
 }
 
 window.onload = function () {
@@ -108,7 +119,7 @@ window.onload = function () {
 	user = profile[0]; posts = profile[1];
 
 	this.load_profile_info(user);
-	this.load_follow(this.is_following(user));
+	this.load_follow((following = this.is_following(user)));
 
 	if (posts != null) // tem permissão
 		this.load_profile_posts(posts);
