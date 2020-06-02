@@ -71,7 +71,65 @@ posts_info_static = '{"posts":['
 "post_content_path":"database/posts/content/pig0.jpeg",\
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
-}'
+},'
+	+
+	//rmseq
+	/*
+	Epoch timestamp: 1590571649
+	Timestamp in milliseconds: 1590571649000
+	Date and time (GMT): Wednesday, 27 May 2020 09:27:29
+	Date and time (your time zone): Quarta-feira, 27 de maio de 2020 10:27:29 GMT+01:00
+	*/
+	'{\
+	"post_id":"hamster1",\
+	"post_creation_ts":"1590571649000",\
+	"post_description":"#hamdorable",\
+	"post_filter":"none",\
+	"post_location":"Lisboa",\
+	"post_hashtags":["hamdorable"],\
+	"post_content_path":"database/posts/content/hamster1.jpeg",\
+	"author_username":"ssalmeida",\
+	"author_avatar_path":"database/users/content/ssalmeida.jpg"\
+	},'
+	+
+	//rsantos
+	/*
+	Epoch timestamp: 1590607769
+	Timestamp in milliseconds: 1590607769000
+	Date and time (GMT): Wednesday, 27 May 2020 19:29:29
+	Date and time (your time zone): Quarta-feira, 27 de maio de 2020 20:29:29 GMT+01:00
+	*/
+	'{\
+	"post_id":"puppy7",\
+	"post_creation_ts":"1590607769000",\
+	"post_description":"#flowers #cutedog #mybestfriend",\
+	"post_filter":"",\
+	"post_location":"",\
+	"post_hashtags":["flowers","cutedog","mybestfriend"],\
+	"post_content_path":"database/posts/content/puppy7.jpeg",\
+	"author_username":"ssalmeida",\
+	"author_avatar_path":"database/users/content/ssalmeida.jpg"\
+	},'
+	+
+	//superguerreiro666
+	/*
+	Epoch timestamp: 1590660335
+	Timestamp in milliseconds: 1590660335000
+	Date and time (GMT): Thursday, 28 May 2020 10:05:35
+	Date and time (your time zone): Quinta-feira, 28 de maio de 2020 11:05:35 GMT+01:00
+	*/
+	'{\
+	"post_id":"puppy3",\
+	"post_creation_ts":"1590660335000",\
+	"post_description":"#cute #myangel",\
+	"post_filter":"none",\
+	"post_location":"Lisoa",\
+	"post_hashtags":["cute","myangel"],\
+	"post_content_path":"database/posts/content/puppy3.jpeg",\
+	"author_username":"ssalmeida",\
+	"author_avatar_path":"database/users/content/ssalmeida.jpg"\
+	}'
+
 	+
 	']}';
 
@@ -128,7 +186,7 @@ function get_hashtags_posts(hashtags) {
 	for (var i = 0; i < keys.length; i++)
 		if (is_post_key(keys[i])) {
 			var post = JSON.parse(localStorage.getItem(keys[i]));
-			
+
 			// procura algum dos hashtags dos argumentos
 			for (var j = 0; j < hashtags.length; j++)
 				if ((index = post.post_hashtags.indexOf(hashtags[j])) >= 0) {

@@ -33,7 +33,20 @@ users_info_static = '{"users":['
 	"user_bio":"😂😂😂",\
 	"user_avatar_path":"database/users/content/rsantos.jpg",\
 	"user_profile_visibility":"0",\
-	"user_followers":["superguerreiro666"],\
+	"user_followers":[],\
+	"user_following":["superguerreiro666"],\
+	"user_following_hashtags":[],\
+	"user_posts":["cat0","puppy1","pig0"],\
+	"user_fls":[]\
+	},'
+	+
+	'{\
+	"user_id":"ssalmeida",\
+	"user_name":"Sara",\
+	"user_bio":"👽 ayy lmao 👽",\
+	"user_avatar_path":"database/users/content/ssalmeida.jpg",\
+	"user_profile_visibility":"1",\
+	"user_followers":[],\
 	"user_following":["superguerreiro666"],\
 	"user_following_hashtags":[],\
 	"user_posts":["cat0","puppy1","pig0"],\
