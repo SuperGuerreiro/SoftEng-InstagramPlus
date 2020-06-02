@@ -3,8 +3,15 @@ const IMAGE_SIZE_LIMIT = 2000000; //2mb
 const VIDEO_SIZE_LIMIT = 8000000; //8mb
 
 /*exported uploadFile */
+function uploadFile(){
+    upload("./Components/create_post/create_post.html");
+}
 
-function uploadFile() { 
+function uploadFileFF(){
+    upload("../../Components/create_post/create_post.html");
+}
+
+function upload(path) { 
     var file = document.getElementById("uploadFile").files[0];
     var filePath = document.getElementById("uploadFile").value;
     
@@ -21,7 +28,7 @@ function uploadFile() {
         localStorage.setItem("tmp_file_format", "photo");
 
         //Redirect para create_post
-        window.location.replace("./Components/create_post/create_post.html"); 
+        window.location.replace(path); 
     }
     
     else if(file.name.endsWith(".mp4")){
@@ -38,7 +45,7 @@ function uploadFile() {
         //Tratar video
        
         //Redirect para create_post
-        window.location.replace("./Components/create_post/create_post.html"); 
+        window.location.replace(path); 
     } else{
         window.alert("Please choose a photo or a video in a supported format.");
         return;
