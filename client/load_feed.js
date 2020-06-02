@@ -49,8 +49,14 @@ var fl_entry_template =
 	'</div>' +
 	'</div>' +
 	'</article>' +
-	'</label>'
+	'</label>';
 
+var filtered_feed_title_template =
+	'<div class="filter-details">' +
+	'<div class="filter-name">' +
+	'<span>Filtered Feeds</span>' +
+	'</div>' +
+	'</div>';
 function build_description(description, hashtags) {
 	for (var i = 0; i < hashtags.length; i++) {
 		description = description.replace('#' + hashtags[i],
@@ -64,6 +70,10 @@ function build_description(description, hashtags) {
 
 function load_fls(fls) {
 	var fls_dv = $("#fls");
+
+	if (fls.length > 0)
+		fls_dv.append(filtered_feed_title_template);
+
 	for (i = 0; i < fls.length; i++) {
 		fls_dv.append(fl_entry_template.format(
 			fls[i].fl_id,
