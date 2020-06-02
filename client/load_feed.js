@@ -1,6 +1,7 @@
 const PROFILE_URL = "./Components/Profile/profile.html";
 const STRANGE_PROFILE_URL = "./Components/strange_profile/strange_profile.html";
 const HASHTAG_PROFILE_URL = "./Components/hashtag_profile/hashtag_profile.html";
+const FILTERED_FEED_URL = "./Components/filtered_feed/filtered_feed.html";
 
 // o html de cada post, irá ser carregado dinamicamente
 var post_template =
@@ -37,7 +38,7 @@ var hashtag_ref_template =
 	'</a>';
 
 var fl_entry_template =
-	'<label for="filteredFeed" class="filtered-feed" id="{0}" onclick="teste()">' +
+	'<label for="filteredFeed" class="filtered-feed" id="{0}" onclick="call_filtered_feed(this)">' +
 	'<article class="filter-box" ref="post">' +
 	'<div class="filter-details">' +
 	'<div class="filter-name">' +
@@ -69,8 +70,12 @@ function load_fls(fls) {
 			fls[i].fl_name,
 			fls[i].fl_description
 		));
-		console.log("called")
 	}
+}
+
+function call_filtered_feed(caller) {
+	localStorage.setItem(TMP_FFEED, caller.id);
+	window.location.replace(FILTERED_FEED_URL);
 }
 
 function load_feed(posts) {
@@ -111,7 +116,6 @@ window.onload = function () {
 	this.set_loggedin_user(LOGGEDIN_USER) // isto pode ser feito de maneira mais inteligente
 	this.load_feed(this.get_feed());
 	this.load_fls(this.get_loggedin_fls());
-	this.console.log(this.get_loggedin_fls());
 	//"event listener" em todos os links
 	$('a').click(
 		function () {

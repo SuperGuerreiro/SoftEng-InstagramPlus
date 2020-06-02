@@ -4,6 +4,7 @@ const POSTS_LOADED = "posts_loaded";
 const USERS_LOADED = "users_loaded";
 const FLS_LOADED = "fls_loaded";
 const TMP_PROFILE = "tmp_profile";
+const TMP_FFEED = "tmp_ffeed";
 const TMP_FILE_LOCATION = "tmp_file_location";
 const TMP_FILE_FORMAT = "tmp_file_format";
 const CURRENT_USER_LABEL = "current_user";
