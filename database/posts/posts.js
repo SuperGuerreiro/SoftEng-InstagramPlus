@@ -1,7 +1,7 @@
 // posts estáticos, não esquecer epoch in millis
 posts_info_static = '{"posts":['
-+ //superguerreiro666, 5
-'{\
+	+ //superguerreiro666, 5
+	'{\
 "post_id":"puppy0",\
 "post_creation_ts":"1590507192000",\
 "post_description":"Que fofura... #cute #puppy",\
@@ -12,8 +12,8 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //rsantos, 3
-'{\
+	+ //rsantos, 3
+	'{\
 "post_id":"cat0",\
 "post_creation_ts":"1590339315000",\
 "post_description":"Um #cute #cat que me deixa feliz! 🐱",\
@@ -24,8 +24,8 @@ posts_info_static = '{"posts":['
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
 },'
-+ //rsantos, 6
-'{\
+	+ //rsantos, 6
+	'{\
 "post_id":"puppy1",\
 "post_creation_ts":"1590560435000",\
 "post_description":"Olhem para isto, que #funny #puppy 🤣🤣🤣",\
@@ -36,8 +36,8 @@ posts_info_static = '{"posts":['
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
 },'
-+ //superguerreiro666, 4
-'{\
+	+ //superguerreiro666, 4
+	'{\
 "post_id":"puppy2",\
 "post_creation_ts":"1590397223000",\
 "post_description":"#funny #puppy",\
@@ -48,8 +48,8 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //superguerreiro666, 2
-'{\
+	+ //superguerreiro666, 2
+	'{\
 "post_id":"hamster0",\
 "post_creation_ts":"1590287415000",\
 "post_description":"Estou a pensar comprar um ratinho malta! #funny #hamster",\
@@ -60,8 +60,8 @@ posts_info_static = '{"posts":['
 "author_username":"superguerreiro666",\
 "author_avatar_path":"database/users/content/superguerreiro666.jpg"\
 },'
-+ //rsantos, 1
-'{\
+	+ //rsantos, 1
+	'{\
 "post_id":"pig0",\
 "post_creation_ts":"1590272655000",\
 "post_description":"🐷🐽 #cute #funny #pig",\
@@ -72,8 +72,8 @@ posts_info_static = '{"posts":['
 "author_username":"rsantos",\
 "author_avatar_path":"database/users/content/rsantos.jpg"\
 }'
-+
-']}';
+	+
+	']}';
 
 function create_post_key(post_id) {
 	return POST_KEY_PREFIX + post_id;
@@ -117,6 +117,26 @@ function get_posts(posts_id) {
 		if (post != null)
 			posts.push(JSON.parse(post));
 	}
+	return posts;
+}
+
+function get_hashtags_posts(hashtags) {
+	if (!is_loaded(POSTS_LOADED)) // lazy approach
+		this.load_static_posts();
+
+	var posts = [], keys = Object.keys(localStorage);
+	for (var i = 0; i < keys.length; i++)
+		if (is_post_key(keys[i])) {
+			var post = JSON.parse(localStorage.getItem(keys[i]));
+			
+			// procura algum dos hashtags dos argumentos
+			for (var j = 0; j < hashtags.length; j++)
+				if (post.post_hashtags.indexOf(hashtags[j]) >= 0) {
+					posts.push(post);
+					break;
+				}
+		}
+
 	return posts;
 }
 
