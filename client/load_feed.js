@@ -24,8 +24,8 @@ var post_template =
 	'<div class="post-caption">' +
 	'<strong>{5}</strong>' + // usr_username,
 	' {6}' + // pst_description
-	'<p></p>'+
-	'<small>{7} {8}</small>' + //pst_creation_ts
+	'<p></p>' +
+	'<small>{7}{8}</small>' + //pst_creation_ts
 	'</div>' +
 	'</article>';
 
@@ -59,8 +59,8 @@ function load_feed(posts) {
 			profile_href = PROFILE_URL;
 
 		var location = "";
-		if(post.post_location != "")
-			location = post.post_location + ","
+		if (post.post_location != "")
+			location = post.post_location + ", "
 
 		feed.append(post_template.format(
 			post.author_avatar_path,
@@ -72,7 +72,7 @@ function load_feed(posts) {
 			build_description(post.post_description, post.post_hashtags),
 			location,
 			relative_time(post.post_creation_ts),
-			
+
 		));
 	}
 }
