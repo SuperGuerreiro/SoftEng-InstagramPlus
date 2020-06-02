@@ -31,11 +31,6 @@ var gallery_item_template =
 	'</div>';
 var user, posts, following, posts_loaded = false;
 
-function load_profile(profile) {
-	load_profile_info(profile[0]);
-	load_profile_posts(profile[1]);
-}
-
 function load_profile_info(user) {
 	$("#prfl").append(profile_template.format(
 		REDO_PATH + user.user_avatar_path,
