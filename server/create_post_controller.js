@@ -21,7 +21,7 @@ var post_info_template = '{\
 function create_post(description, filter, location, content_path) {
 	// "autenticação"
 	var user = get_loggedin_user();
-	console.assert(loggedin_user != null);
+	console.assert(user != null);
 
 	var post_id = create_post_id();
 	var post_info = post_info_template.format(
