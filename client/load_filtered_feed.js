@@ -1,7 +1,6 @@
-const PROFILE_URL = "./Components/Profile/profile.html";
-const STRANGE_PROFILE_URL = "./Components/strange_profile/strange_profile.html";
-const HASHTAG_PROFILE_URL = "./Components/hashtag_profile/hashtag_profile.html";
-const FILTERED_FEED_URL = "./Components/filtered_feed/filtered_feed.html";
+const PROFILE_URL = ".../../Components/Profile/profile.html";
+const STRANGE_PROFILE_URL = "../../Components/strange_profile/strange_profile.html";
+const HASHTAG_PROFILE_URL = "../../Components/hashtag_profile/hashtag_profile.html";
 const PATH = "../../";
 
 // o html de cada post, irá ser carregado dinamicamente
@@ -86,9 +85,9 @@ function load_feed(posts) {
             post = post[0];
         }
 
-        var profile_href = PATH + STRANGE_PROFILE_URL; // lucky guess 2.0?
+        var profile_href = STRANGE_PROFILE_URL; // lucky guess 2.0?
         if (post.author_username == get_loggedin_user_id())
-            profile_href = PATH + PROFILE_URL;
+            profile_href = PROFILE_URL;
 
         var location = "";
         if (post.post_location != "")
