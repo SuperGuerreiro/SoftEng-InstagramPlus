@@ -43,3 +43,29 @@ function follow_unfollow(user) {
 	add_user(user);
 	return is_fllwng;
 }
+
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
+function is_following_hashtag(hashtag) {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+	return (loggedin_user.user_following_hashtags.indexOf(hashtag) >= 0);
+}
+
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
+function follow_unfollow_hashtag(hashtag) {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+
+	if ((is_fllwng = !is_following_hashtag(hashtag)))  // follow
+		loggedin_user.user_following_hashtags.push(hashtag);
+	else  // unfollow
+		loggedin_user.user_following_hashtags.splice(loggedin_user.user_following_hashtags.indexOf(hashtag), 1);
+
+	// guarda na "users db"
+	add_user(loggedin_user);
+	return is_fllwng;
+}

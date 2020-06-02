@@ -131,8 +131,8 @@ function get_hashtags_posts(hashtags) {
 			
 			// procura algum dos hashtags dos argumentos
 			for (var j = 0; j < hashtags.length; j++)
-				if (post.post_hashtags.indexOf(hashtags[j]) >= 0) {
-					posts.push(post);
+				if ((index = post.post_hashtags.indexOf(hashtags[j])) >= 0) {
+					posts.push([post, post.post_hashtags[index]]); //devolve tb o hashtag a que corresponde
 					break;
 				}
 		}

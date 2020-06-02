@@ -21,3 +21,7 @@ function get_profile_posts(user) {
 
 	return get_posts(user.user_posts).sort((x, y) => y.post_creation_ts - x.post_creation_ts);
 }
+
+function get_hashtag_profile(hashtag) {
+	return [hashtag, get_hashtags_posts([hashtag])];
+}
