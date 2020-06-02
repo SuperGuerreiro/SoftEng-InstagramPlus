@@ -28,3 +28,10 @@ function get_filtered_feed(fl_id) {
 	}); //kel krazy sort
 };
 
+function get_fl_name(fl_id){
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+	
+	return get_fls([fl_id])[0].fl_name; 
+}
+

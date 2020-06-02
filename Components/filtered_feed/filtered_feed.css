@@ -15,10 +15,17 @@ label.upload-file-btn {
     width: 50px; 
 }
 
+.fl-items {
+  display: grid;
+  position: absolute;
+  top: 80px;
+  left: 35px;
+}
+
 label.filtered-feed {
-    position: fixed;
-    top: 80px;
-    left: 35px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 60px;
     height: 60px;
     width: 380px;  
 }
