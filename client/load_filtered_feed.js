@@ -1,5 +1,5 @@
-const PROFILE_URL = "../../Components/Profile/profile.html";
-const STRANGE_PROFILE_URL = "../../Components/strange_profile/strange_profile.html";
+const PROFILE_URL = "./Components/Profile/profile.html";
+const STRANGE_PROFILE_URL = "./Components/strange_profile/strange_profile.html";
 const HASHTAG_PROFILE_URL = "../../Components/hashtag_profile/hashtag_profile.html";
 const PATH = "../../";
 
