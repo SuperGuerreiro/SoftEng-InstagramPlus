@@ -81,7 +81,7 @@ posts_info_static = '{"posts":['
 	Date and time (your time zone): Quarta-feira, 27 de maio de 2020 10:27:29 GMT+01:00
 	*/
 	'{\
-	"post_id":"hamster1",\
+	"post_id":"1",\
 	"post_creation_ts":"1590571649000",\
 	"post_description":"#hamdorable",\
 	"post_filter":"none",\
@@ -100,7 +100,7 @@ posts_info_static = '{"posts":['
 	Date and time (your time zone): Quarta-feira, 27 de maio de 2020 20:29:29 GMT+01:00
 	*/
 	'{\
-	"post_id":"puppy7",\
+	"post_id":"2",\
 	"post_creation_ts":"1590607769000",\
 	"post_description":"#flowers #cutedog #mybestfriend",\
 	"post_filter":"",\
@@ -119,13 +119,13 @@ posts_info_static = '{"posts":['
 	Date and time (your time zone): Quinta-feira, 28 de maio de 2020 11:05:35 GMT+01:00
 	*/
 	'{\
-	"post_id":"puppy3",\
+	"post_id":"3",\
 	"post_creation_ts":"1590660335000",\
 	"post_description":"#cute #myangel",\
 	"post_filter":"none",\
-	"post_location":"Lisoa",\
+	"post_location":"Lisboa",\
 	"post_hashtags":["cute","myangel"],\
-	"post_content_path":"database/posts/content/puppy3.jpeg",\
+	"post_content_path":"database/posts/content/puppy6.jpeg",\
 	"author_username":"ssalmeida",\
 	"author_avatar_path":"database/users/content/ssalmeida.jpg"\
 	}'

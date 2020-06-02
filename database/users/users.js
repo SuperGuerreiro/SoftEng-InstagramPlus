@@ -49,7 +49,7 @@ users_info_static = '{"users":['
 	"user_followers":[],\
 	"user_following":["superguerreiro666"],\
 	"user_following_hashtags":[],\
-	"user_posts":["cat0","puppy1","pig0"],\
+	"user_posts":["1","2","3"],\
 	"user_fls":[]\
 	}'
 	+
