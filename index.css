@@ -1,10 +1,9 @@
-
 /* Esconde o input */
 input[type='file'] {
   display: none
 }
 
-label {
+label.upload-file-btn {
  position: fixed;
     bottom: 50px;
     right: 40px; 
@@ -12,6 +11,38 @@ label {
     background-image: url(./btn.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 50px; 
+    width: 50px; 
+}
+
+label.filtered-feed {
+    position: fixed;
+    top: 80px;
+    left: 35px;
+    cursor: pointer;
+    height: 60px;
+    width: 380px;  
+}
+
+.filter-box {
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+.filter-details {
+  padding: 15px;
+  align-items: center; 
+}
+
+.filter-name {
+  margin-left: 8px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
+
+.filter-description {
+  padding: 8px 8px;
+  word-wrap: break-word;
+  text-align: left;  
 }

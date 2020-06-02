@@ -45,3 +45,7 @@ function uploadFile() {
     }
         
 }
+
+function teste(){
+    console.log("cliquei");
+}
