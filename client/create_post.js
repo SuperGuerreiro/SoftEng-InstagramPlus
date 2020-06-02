@@ -2,7 +2,7 @@ const PHOTO_FORMAT = "photo";
 const RELATIVE_PATH = "../../";
 
 function createPost() { //camelCaseCringe() 
-	// chama controler porque sou um moço prendado
+	// chama controler
 	create_post(
 		document.getElementById("description").value,
 		document.getElementById("filter-figure-id").className,
