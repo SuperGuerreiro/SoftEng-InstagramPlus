@@ -5,8 +5,8 @@ posts_info_static = '{"posts":['
 "post_id":"puppy0",\
 "post_creation_ts":"1590507192000",\
 "post_description":"Que fofura... #cute #puppy",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"none",\
+"post_location":"Lisboa",\
 "post_hashtags":["cute","puppy"],\
 "post_content_path":"database/posts/content/puppy0.jpeg",\
 "author_username":"rmseq",\
@@ -17,8 +17,8 @@ posts_info_static = '{"posts":['
 "post_id":"cat0",\
 "post_creation_ts":"1590339315000",\
 "post_description":"Um #cute #cat que me deixa feliz! 🐱",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"filter-1977",\
+"post_location":"",\
 "post_hashtags":["cute","cat"],\
 "post_content_path":"database/posts/content/cat0.jpeg",\
 "author_username":"rsantos",\
@@ -29,8 +29,8 @@ posts_info_static = '{"posts":['
 "post_id":"puppy1",\
 "post_creation_ts":"1590560435000",\
 "post_description":"Olhem para isto, que #funny #puppy 🤣🤣🤣",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"filter-crema",\
+"post_location":"",\
 "post_hashtags":["funny","puppy"],\
 "post_content_path":"database/posts/content/puppy1.jpeg",\
 "author_username":"rsantos",\
@@ -41,8 +41,8 @@ posts_info_static = '{"posts":['
 "post_id":"puppy2",\
 "post_creation_ts":"1590397223000",\
 "post_description":"#funny #puppy",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"filter-ashby",\
+"post_location":"Amadora",\
 "post_hashtags":["funny","puppy"],\
 "post_content_path":"database/posts/content/puppy2.jpeg",\
 "author_username":"rmseq",\
@@ -53,8 +53,8 @@ posts_info_static = '{"posts":['
 "post_id":"hamster0",\
 "post_creation_ts":"1590287415000",\
 "post_description":"Estou a pensar comprar um ratinho malta! #funny #hamster",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"filter-ginza",\
+"post_location":"Barreiro",\
 "post_hashtags":["funny","hamster"],\
 "post_content_path":"database/posts/content/hamster0.jpeg",\
 "author_username":"rmseq",\
@@ -65,8 +65,8 @@ posts_info_static = '{"posts":['
 "post_id":"pig0",\
 "post_creation_ts":"1590272655000",\
 "post_description":"🐷🐽 #cute #funny #pig",\
-"post_filter":"//TODO",\
-"post_location":"//TODO",\
+"post_filter":"none",\
+"post_location":"",\
 "post_hashtags":["cute","funny","pig"],\
 "post_content_path":"database/posts/content/pig0.jpeg",\
 "author_username":"rsantos",\
