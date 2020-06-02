@@ -51,7 +51,7 @@ var ffeed_name_template =
 
 var no_feed_template =
     '<div class="no-feed">' +
-    "<center>This is so sad :'( , there's no posts in this feed.</center>" +
+    "<center>This is so sad :'( , there are no posts in this feed.</center>" +
     '</div>';
 
 function build_description(description, hashtags) {

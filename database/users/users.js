@@ -22,8 +22,8 @@ users_info_static = '{"users":['
 	"user_profile_visibility":"0",\
 	"user_followers":[""],\
 	"user_following":["superguerreiro666"],\
-	"user_following_hashtags":["puppy0","puppy2","hamster0"],\
-	"user_posts":[],\
+	"user_following_hashtags":[],\
+	"user_posts":["puppy0","puppy2","hamster0"],\
 	"user_fls":[]\
 	},'
 	+
