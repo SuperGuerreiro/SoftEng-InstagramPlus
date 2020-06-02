@@ -10,7 +10,8 @@ users_info_static = '{"users":['
 	"user_followers":["rsantos"],\
 	"user_following":["rsantos"],\
 	"user_following_hashtags":["cute"],\
-	"user_posts":["puppy0","puppy2","hamster0"]\
+	"user_posts":["puppy0","puppy2","hamster0"],\
+	"user_fls":["cute0"]\
 	},'
 	+
 	'{\
@@ -22,7 +23,8 @@ users_info_static = '{"users":['
 	"user_followers":[""],\
 	"user_following":["superguerreiro666"],\
 	"user_following_hashtags":[],\
-	"user_posts":[""]\
+	"user_posts":[],\
+	"user_fls":[]\
 	},'
 	+
 	'{\
@@ -34,7 +36,8 @@ users_info_static = '{"users":['
 	"user_followers":["superguerreiro666"],\
 	"user_following":["superguerreiro666"],\
 	"user_following_hashtags":[],\
-	"user_posts":["cat0","puppy1","pig0"]\
+	"user_posts":["cat0","puppy1","pig0"],\
+	"user_fls":[]\
 	}'
 	+
 	']}';
