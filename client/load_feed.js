@@ -36,6 +36,19 @@ var hashtag_ref_template =
 	'{1}' + //hashtag
 	'</a>';
 
+var fl_entry_template =
+	'<label for="filteredFeed" class="filtered-feed" id="{0}" onclick="teste()">' +
+	'<article class="filter-box" ref="post">' +
+	'<div class="filter-details">' +
+	'<div class="filter-name">' +
+	'<span>{1}</span>' +
+	'</div>' +
+	'<div class="filter-description">' +
+	'<span>{2}</span>' +
+	'</div>' +
+	'</div>' +
+	'</article>' +
+	'</label>'
 
 function build_description(description, hashtags) {
 	for (var i = 0; i < hashtags.length; i++) {
@@ -46,6 +59,18 @@ function build_description(description, hashtags) {
 			));
 	}
 	return description;
+}
+
+function load_fls(fls) {
+	var fls_dv = $("#fls");
+	for (i = 0; i < fls.length; i++) {
+		fls_dv.append(fl_entry_template.format(
+			fls[i].fl_id,
+			fls[i].fl_name,
+			fls[i].fl_description
+		));
+		console.log("called")
+	}
 }
 
 function load_feed(posts) {
@@ -85,7 +110,8 @@ function load_feed(posts) {
 window.onload = function () {
 	this.set_loggedin_user(LOGGEDIN_USER) // isto pode ser feito de maneira mais inteligente
 	this.load_feed(this.get_feed());
-
+	this.load_fls(this.get_loggedin_fls());
+	this.console.log(this.get_loggedin_fls());
 	//"event listener" em todos os links
 	$('a').click(
 		function () {

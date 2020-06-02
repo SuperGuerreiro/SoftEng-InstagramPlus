@@ -28,3 +28,11 @@ function get_feed() {
 	}); //kel krazy sort
 };
 
+// não faz realmente diferença estar aqui, é só para dar display dos filtros do utilizador
+function get_loggedin_fls() {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+
+	return get_fls(loggedin_user.user_fls);
+}

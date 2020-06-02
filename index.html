@@ -2,75 +2,63 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Instagram Plus</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Instagram Plus</title>
 
-  <!-- bootstrap core CSS -->
-  <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- bootstrap core CSS -->
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- jquery, can be changed to local lib later -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- jquery, can be changed to local lib later -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- custom js -->
-  <script type="text/javascript" src="database/database.js"></script>
-  <script type="text/javascript" src="database/users/users.js"></script>
-  <script type="text/javascript" src="database/posts/posts.js"></script>
-  <script type="text/javascript" src="server/feed_controller.js"></script>
-  <script type="text/javascript" src="client/utils.js"></script>
-  <script type="text/javascript" src="client/load_feed.js"></script>
-  <script type="text/javascript" src="client/upload.js"></script>
+	<!-- custom js -->
+	<script type="text/javascript" src="database/database.js"></script>
+	<script type="text/javascript" src="database/users/users.js"></script>
+	<script type="text/javascript" src="database/posts/posts.js"></script>
+	<script type="text/javascript" src="database/filtered_feed/filtered_feed.js"></script>
+	<script type="text/javascript" src="server/feed_controller.js"></script>
+	<script type="text/javascript" src="client/utils.js"></script>
+	<script type="text/javascript" src="client/load_feed.js"></script>
+	<script type="text/javascript" src="client/upload.js"></script>
 
-  <!-- css -->
-  <link rel="stylesheet" href="lib/instagram.css/dist/instagram.min.css" />
-  <link rel="stylesheet" type="text/css" href="./Components/Header/Header.css" />
-  <link rel="stylesheet" type="text/css" href="./Components/Post/Post.css" />
-  <link rel="stylesheet" href="./index.css" />
+	<!-- css -->
+	<link rel="stylesheet" href="lib/instagram.css/dist/instagram.min.css" />
+	<link rel="stylesheet" type="text/css" href="./Components/Header/Header.css" />
+	<link rel="stylesheet" type="text/css" href="./Components/Post/Post.css" />
+	<link rel="stylesheet" href="./index.css" />
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <nav class="Nav">
-    <div class="Nav-menus">
-      <div class="Nav-brand">
-        <a class="Nav-brand-logo" href="./index.html">
-          Instagram
-        </a>
-      </div>
-      <a class="Nav-search-bar" href="./Components/search/search.html"></a>
-      <a class="Nav-profile" href="./Components/Profile/profile.html"></a>
-    </div>
-  </nav>
-  <!-- END OF HEADER -->
+	<!-- HEADER -->
+	<nav class="Nav">
+		<div class="Nav-menus">
+			<div class="Nav-brand">
+				<a class="Nav-brand-logo" href="./index.html">
+					Instagram
+				</a>
+			</div>
+			<a class="Nav-search-bar" href="./Components/search/search.html"></a>
+			<a class="Nav-profile" href="./Components/Profile/profile.html"></a>
+		</div>
+	</nav>
+	<!-- END OF HEADER -->
 
-  <div class=posts id=psts>
-    <!-- empty div, posts will be loaded here -->
-  </div>
+	<div class=posts id=psts>
+		<!-- empty div, posts will be loaded here -->
+	</div>
 
-  <label for='uploadFile' class="upload-file-btn"></label>
-  <input id='file-arquivo' type='file'>
-  <input type="file" id="uploadFile" onchange="uploadFile()">
-    
-    
-  <!-- Label para 1 filtered feed, faz tantos quantos precisares com isto -->
-  <label for='filteredFeed' class="filtered-feed" onclick="teste()">
-     <article class="filter-box" ref="post"> 
-      <div class="filter-details"> 
-        <div class="filter-name"> 
-            <span>Filtro Potas</span> 
-        </div>
-        <div class="filter-description"> 
-            <span>Todas as potas doidas que eu sigoasfsafasfagasgasgagalkjfaklfjaklfjawklfjklwafjklj</span> 
-        </div>
-      </div>
-    </article> 
-  </label>
- <!-- Filtered Feed label ends here ->
-    
+	<label for='uploadFile' class="upload-file-btn"></label>
+	<input id='file-arquivo' type='file'>
+	<input type="file" id="uploadFile" onchange="uploadFile()">
+
+	<div class="fl-items" id="fls">
+		<!-- filtered feeds will be loaded here -->
+	</div>
 
 </body>
 
