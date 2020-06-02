@@ -16,9 +16,13 @@ var post_info_template = '{\
     "author_avatar_path":"{8}"\
     }';
 
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
 function create_post(description, filter, location, content_path) {
+	// "autenticação"
 	var user = get_loggedin_user();
-	
+	console.assert(loggedin_user != null);
+
 	var post_id = create_post_id();
 	var post_info = post_info_template.format(
 		post_id,
