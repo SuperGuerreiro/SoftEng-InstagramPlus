@@ -9,6 +9,7 @@ users_info_static = '{"users":['
 	"user_profile_visibility":"1",\
 	"user_followers":["rsantos"],\
 	"user_following":["rsantos"],\
+	"user_following_hashtags":["cute"],\
 	"user_posts":["puppy0","puppy2","hamster0"]\
 	},'
 	+
@@ -20,6 +21,7 @@ users_info_static = '{"users":['
 	"user_profile_visibility":"0",\
 	"user_followers":[""],\
 	"user_following":["superguerreiro666"],\
+	"user_following_hashtags":[],\
 	"user_posts":[""]\
 	},'
 	+
@@ -31,6 +33,7 @@ users_info_static = '{"users":['
 	"user_profile_visibility":"0",\
 	"user_followers":["superguerreiro666"],\
 	"user_following":["superguerreiro666"],\
+	"user_following_hashtags":[],\
 	"user_posts":["cat0","puppy1","pig0"]\
 	}'
 	+
