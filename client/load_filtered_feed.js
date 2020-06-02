@@ -86,9 +86,9 @@ function load_feed(posts) {
             post = post[0];
         }
 
-        var profile_href = STRANGE_PROFILE_URL; // lucky guess 2.0?
+        var profile_href = PATH + STRANGE_PROFILE_URL; // lucky guess 2.0?
         if (post.author_username == get_loggedin_user_id())
-            profile_href = PROFILE_URL;
+            profile_href = PATH + PROFILE_URL;
 
         var location = "";
         if (post.post_location != "")
