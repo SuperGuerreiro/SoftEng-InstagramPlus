@@ -24,6 +24,8 @@ var post_template =
 	'<div class="post-caption">' +
 	'<strong>{5}</strong>' + // usr_username,
 	' {6}' + // pst_description
+	'<p></p>'+
+	'<small>{7} {8}</small>' + //pst_creation_ts
 	'</div>' +
 	'</article>';
 
@@ -40,7 +42,7 @@ function build_description(description, hashtags) {
 				"teste",
 				'#' + hashtags[i]
 			));
-			console.log("replaced");
+		console.log("replaced");
 	}
 	console.log(description);
 	return description;
@@ -56,6 +58,10 @@ function load_feed(posts) {
 		if (post.author_username == get_loggedin_user_id())
 			profile_href = PROFILE_URL;
 
+		var location = "";
+		if(post.post_location != "")
+			location = post.post_location + ","
+
 		feed.append(post_template.format(
 			post.author_avatar_path,
 			profile_href,
@@ -63,7 +69,10 @@ function load_feed(posts) {
 			post.post_filter,
 			post.post_content_path,
 			post.author_username,
-			build_description(post.post_description, post.post_hashtags)
+			build_description(post.post_description, post.post_hashtags),
+			location,
+			relative_time(post.post_creation_ts),
+			
 		));
 	}
 }
