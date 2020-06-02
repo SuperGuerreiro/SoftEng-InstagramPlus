@@ -29,6 +29,11 @@ var gallery_item_template =
 	'<div class="gallery-item-info">' +
 	'</div>' +
 	'</div>';
+var private_profile_template =
+	'<div class="private-profile">' +
+	'<big>This profile is private. Only approved followers can see the posts in it.</big>' +
+	'</div>';
+
 var user, posts, following, posts_loaded = false;
 
 function load_profile_info(user) {
@@ -47,6 +52,9 @@ function load_profile_posts(posts) {
 	if (posts_loaded)
 		return;
 
+	$('.private-profile').remove();
+
+
 	var gallery = $("#gllry");
 	for (i = 0; i < posts.length; i++) {
 		var post = posts[i];
@@ -64,6 +72,7 @@ function unload_profile_posts() {
 		return;
 
 	$('.gallery-item').remove();
+	$("#gllry").append(private_profile_template);
 
 	posts_loaded = false;
 }
@@ -118,4 +127,7 @@ window.onload = function () {
 
 	if (posts != null) // tem permissão
 		this.load_profile_posts(posts);
+	else
+		$("#gllry").append(private_profile_template);
+
 }
