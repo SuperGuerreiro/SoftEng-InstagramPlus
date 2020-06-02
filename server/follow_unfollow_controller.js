@@ -1,31 +1,45 @@
 
-function is_following(user1, user2) {
-	var res = (user1.user_following.indexOf(user2.user_id) >= 0);
-	console.assert((user2.user_followers.indexOf(user1.user_id) >= 0) == res); // verifica conscistência
+
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
+function is_following(user) {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+
+	var res = (loggedin_user.user_following.indexOf(user.user_id) >= 0);
+	console.assert((user.user_followers.indexOf(loggedin_user.user_id) >= 0) == res); // verifica conscistência
 	return res;
 }
 
-function is_followed(user1, user2) {
-	var res = (user1.user_followers.indexOf(user2.user_id) >= 0);
-	console.assert((user2.user_following.indexOf(user1.user_id) >= 0) == res); // verifica conscistência
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
+function is_followed(user) {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+
+	var res = (loggedin_user.user_followers.indexOf(user.user_id) >= 0);
+	console.assert((user.user_following.indexOf(loggedin_user.user_id) >= 0) == res); // verifica conscistência
 	return res;
 }
 
-/**
- * @param {*} user1 utilizador que vai seguir/parar de seguir
- * @param {*} user2  utilizador que vai ser seguido/parar de ser seguido
- */
-function follow_unfollow(user1, user2) {
-	if ((is_fllwng = !is_following(user1,user2))) { // follow
-		user1.user_following.push(user2.user_id);
-		user2.user_followers.push(user1.user_id);
+// devia receber argumento do user que estamos
+// logados e respectiva autenticação numa situação real
+function follow_unfollow(user) {
+	// "autenticação"
+	var loggedin_user = get_loggedin_user();
+	console.assert(loggedin_user != null);
+
+	if ((is_fllwng = !is_following(user))) { // follow
+		loggedin_user.user_following.push(user.user_id);
+		user.user_followers.push(loggedin_user.user_id);
 	} else { // unfollow
-		user1.user_following.splice(user1.user_following.indexOf(user2.user_id),1);
-		user2.user_followers.splice(user2.user_followers.indexOf(user1.user_id),1);
+		loggedin_user.user_following.splice(loggedin_user.user_following.indexOf(user.user_id), 1);
+		user.user_followers.splice(user.user_followers.indexOf(loggedin_user.user_id), 1);
 	}
 	// guarda na "users db"
-	add_user(user1);
-	add_user(user2);
-
+	add_user(loggedin_user);
+	add_user(user);
 	return is_fllwng;
 }
