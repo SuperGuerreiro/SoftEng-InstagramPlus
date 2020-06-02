@@ -77,6 +77,9 @@ function build_description(description, hashtags) {
 function load_fls(fls) {
 	var fls_dv = $("#fls");
 
+	if (fls.length > 0)
+		fls_dv.append(filtered_feed_title_template);
+
 	for (i = 0; i < fls.length; i++) {
 		fls_dv.append(fl_entry_template.format(
 			fls[i].fl_id,
