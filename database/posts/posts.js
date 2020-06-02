@@ -9,8 +9,8 @@ posts_info_static = '{"posts":['
 "post_location":"//TODO",\
 "post_hashtags":["cute","puppy"],\
 "post_content_path":"database/posts/content/puppy0.jpeg",\
-"author_username":"superguerreiro666",\
-"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
+"author_username":"rmseq",\
+"author_avatar_path":"database/users/content/rmseq.jpg"\
 },'
 	+ //rsantos, 3
 	'{\
@@ -45,8 +45,8 @@ posts_info_static = '{"posts":['
 "post_location":"//TODO",\
 "post_hashtags":["funny","puppy"],\
 "post_content_path":"database/posts/content/puppy2.jpeg",\
-"author_username":"superguerreiro666",\
-"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
+"author_username":"rmseq",\
+"author_avatar_path":"database/users/content/rmseq.jpg"\
 },'
 	+ //superguerreiro666, 2
 	'{\
@@ -57,8 +57,8 @@ posts_info_static = '{"posts":['
 "post_location":"//TODO",\
 "post_hashtags":["funny","hamster"],\
 "post_content_path":"database/posts/content/hamster0.jpeg",\
-"author_username":"superguerreiro666",\
-"author_avatar_path":"database/users/content/superguerreiro666.jpg"\
+"author_username":"rmseq",\
+"author_avatar_path":"database/users/content/rmseq.jpg"\
 },'
 	+ //rsantos, 1
 	'{\

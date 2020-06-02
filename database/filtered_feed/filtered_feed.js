@@ -16,8 +16,18 @@ fls_info_static = '{"filter_lists":['
 "fl_owner_id":"superguerreiro666",\
 "fl_hashtags":[],\
 "fl_users_id":["rsantos"]\
-}'
+},'
     +
+//superguerreiro666
+'{\
+    "fl_id":"empty0",\
+    "fl_description":"Sadness filter, only sad #s.",\
+    "fl_name":"Empty Sadness",\
+    "fl_owner_id":"superguerreiro666",\
+    "fl_hashtags":["#sad"],\
+    "fl_users_id":[]\
+    }'
+        +
     ']}';
 
 function create_fl_key(post_id) {

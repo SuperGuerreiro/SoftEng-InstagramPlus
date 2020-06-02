@@ -57,6 +57,12 @@ var filtered_feed_title_template =
 	'<span>Filtered Feeds</span>' +
 	'</div>' +
 	'</div>';
+
+var no_feed_template =
+	'<div class="no-feed">' +
+	"<center>This is so sad :'( , there's no posts in this feed.</center>" +
+	'</div>';
+
 function build_description(description, hashtags) {
 	for (var i = 0; i < hashtags.length; i++) {
 		description = description.replace('#' + hashtags[i],
@@ -70,9 +76,6 @@ function build_description(description, hashtags) {
 
 function load_fls(fls) {
 	var fls_dv = $("#fls");
-
-	if (fls.length > 0)
-		fls_dv.append(filtered_feed_title_template);
 
 	for (i = 0; i < fls.length; i++) {
 		fls_dv.append(fl_entry_template.format(
@@ -90,6 +93,10 @@ function call_filtered_feed(caller) {
 
 function load_feed(posts) {
 	var feed = $("#psts");
+
+	if (posts.length <= 0)
+		feed.append(no_feed_template);
+
 	for (i = 0; i < posts.length; i++) {
 
 		hashtag = "";

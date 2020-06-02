@@ -49,6 +49,11 @@ var ffeed_name_template =
     '</article>' +
     '</label>';
 
+var no_feed_template =
+    '<div class="no-feed">' +
+    "<center>This is so sad :'( , there's no posts in this feed.</center>" +
+    '</div>';
+
 function build_description(description, hashtags) {
     for (var i = 0; i < hashtags.length; i++) {
         description = description.replace('#' + hashtags[i],
@@ -68,6 +73,11 @@ function load_feed_name(fl_name) {
 
 function load_feed(posts) {
     var feed = $("#psts");
+
+    if (posts.length <= 0)
+		feed.append(no_feed_template);
+
+
     for (i = 0; i < posts.length; i++) {
 
         hashtag = "";
